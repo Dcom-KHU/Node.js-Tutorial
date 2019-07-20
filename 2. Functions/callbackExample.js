@@ -1,13 +1,15 @@
-function callbackExample(num,callback){
+const list=[1,2,3,4,5,6,7,8,9,10];
+
+function callbackExample(items,callback){
     setTimeout(function(){
         let sum=0;
-        for(let i=num;i>0;i--){
-            sum+=i;
+        for(let i=0;i<items.length;i++){
+            sum+=items[i];
         }
         callback(sum);
     },0);
 };
-callbackExample(10,function(result){
+callbackExample(list,function(result){
     console.log(result);
 });
 console.log('first');
