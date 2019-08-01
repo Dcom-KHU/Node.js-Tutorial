@@ -3,3 +3,6 @@
 
 # webstorm
 .idea/
+
+# modules
+node_modules/
