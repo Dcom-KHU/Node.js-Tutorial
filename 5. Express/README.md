@@ -335,7 +335,7 @@ app.js에는 counter라는 변수가 선언되어 있으며 0으로 초기화 되어있습니다.
 
 localhost:3000는 counterMain.html을 보여줍니다.  
 
-Increase 버튼을 누르면 /incresse로 POST request가 발생하고  
+Increase 버튼을 누르면 /increase로 POST request가 발생하고  
 서버에서는 변수 counter의 값을 1 증가시킨 다음 localhost:3000으로 redirect 해줍니다.  
 
 Decrease 버튼을 누르면 /decrease로 POST request가 발생하고  
