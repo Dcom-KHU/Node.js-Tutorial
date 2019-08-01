@@ -825,10 +825,10 @@ HTTP 통신은 다음과 같은 구조에서 이루어 집니다.
 그 다음 Network 탭을 눌러 봅시나.  
 웹 크롤링을 해보신 분이라면 익숙한 화면이 나오게 될 것입니다.  
 만약 Network 탭에 아무런 내용도 뜨지 않는다면 Ctrl+R을 눌러 페이지를 새로 불러와 봅시다.  
-<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/4.PNG?raw=true">
+<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/4.PNG?raw=true">  
 위 사진과 같이 많은 로그가 뜨는 것을 확인할 수 있습니다.  
 그 중에서 가장 위의 www.naver.com 이라 적혀있는것을 클릭해 봅시다.  
-<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/5.PNG?raw=true">
+<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/5.PNG?raw=true">  
 그렇게 되면 HTTP 통신이 어떻게 이루어져 있는 지 Headers 부터 시작하여 Preview, Response 등등 다양한 정보가 표시됩니다.  
 
 Headers에는 HTTP 통신을 할 때 이 request가 어떤 request인지, 이 response가 어떤 response인지 간략한 설명이 담겨 있습니다.  
@@ -877,11 +877,13 @@ Python의 pip와 비슷한 역할을 합니다.
 바로 한번 시작해 봅시다.  
 여태 Node.js를 공부했던 폴더로 한번 들어가 봅시다.  
 현재로선  
+
 1. Introducion  
 1. Functions
 1. Promise
-1. Modules
-...
+1. Modules  
+...   
+
 와 같이 보이는 폴더가 되겠네요.  
 webstorm이나 visual studio code와 같이 terminal를 지원해 주는 ide를 사용하고 계시다면 현재 위치를 확인해 주세요.  
 
