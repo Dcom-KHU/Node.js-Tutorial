@@ -807,7 +807,7 @@ HTTPS는 HTTP 통신에서 보안이 개선된 방식입니다.
 아무튼 HTTP 통신이랑 큰 틀은 비슷합니다.  
 
 HTTP 통신은 다음과 같은 구조에서 이루어 집니다.  
-<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/3.PNG?raw=true">
+<img src="https://raw.githubusercontent.com/JJuOn/2019-Node.js-Study/master/img/3.png">
 1. 클라이언트(웹 브라우저)는 서버에게 URL(자원의 위치)나 URI(자원의 식별자)를 통해 요청(Request)한다.
 1. 서버는 그에 맞는 응답(Response)을 해준다.
 
