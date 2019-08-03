@@ -1,18 +1,18 @@
 ## 6. Middlewares
-ÀÌ¹ø °­ÀÇ¿¡¼­´Â ¹Ìµé¿þ¾î¿¡ ´ëÇØ ¾Ë¾Æº¸µµ·Ï ÇÏ°Ú½À´Ï´Ù.  
-º»°ÝÀûÀ¸·Î ½ÃÀÛÇÏ±â¿¡ ¾Õ¼­ ¹Ìµé¿þ¾î°¡ ¹«¾ùÀÎÁö °£·«È÷ ¼³¸íÇÏ°í ³Ñ¾î°¡°Ú½À´Ï´Ù.  
+ì´ë²ˆ ê°•ì˜ì—ì„œëŠ” ë¯¸ë“¤ì›¨ì–´ì— ëŒ€í•´ ì•Œì•„ë³´ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤.  
+ë³¸ê²©ì ìœ¼ë¡œ ì‹œìž‘í•˜ê¸°ì— ì•žì„œ ë¯¸ë“¤ì›¨ì–´ê°€ ë¬´ì—‡ì¸ì§€ ê°„ëžµížˆ ì„¤ëª…í•˜ê³  ë„˜ì–´ê°€ê² ìŠµë‹ˆë‹¤.  
 
-¹Ìµé¿þ¾î´Â ´Ü¾î¿¡¼­µµ À¯Ãß °¡´ÉÇÏµíÀÌ Áß°£¿¡ À§Ä¡ÇÑ ¼ÒÇÁÆ®¿þ¾îÀÔ´Ï´Ù.  
-¾î´À °÷ÀÇ Áß°£ÀÌ³Ä¸é, ¿äÃ»(request)¿Í ÀÀ´ä(response)ÀÇ Áß°£ÀÔ´Ï´Ù.  
+ë¯¸ë“¤ì›¨ì–´ëŠ” ë‹¨ì–´ì—ì„œë„ ìœ ì¶” ê°€ëŠ¥í•˜ë“¯ì´ ì¤‘ê°„ì— ìœ„ì¹˜í•œ ì†Œí”„íŠ¸ì›¨ì–´ìž…ë‹ˆë‹¤.  
+ì–´ëŠ ê³³ì˜ ì¤‘ê°„ì´ëƒë©´, ìš”ì²­(request)ì™€ ì‘ë‹µ(response)ì˜ ì¤‘ê°„ìž…ë‹ˆë‹¤.  
 
-ÀÌ¹ø °­ÀÇÀÇ ¿¹Á¦µéÀº ÀÌÀü°ú °°ÀÌ °­ÀÇÀÚ·á¿¡ Á¦°øÀÌ µÇ°ÚÁö¸¸,  
-¸¹Àº ÆÄÀÏÀ» »ç¿ëÇÏÁö ¾ÊÀ» ¿¹Á¤ÀÌ±â ¶§¹®¿¡  
-°­ÀÇ¿Í ÇÔ²² Ã³À½ºÎÅÍ ÀÛ¼ºÇØ ³ª°¡´Â°ÍÀ» ÃßÃµµå¸³´Ï´Ù.  
+ì´ë²ˆ ê°•ì˜ì˜ ì˜ˆì œë“¤ì€ ì´ì „ê³¼ ê°™ì´ ê°•ì˜ìžë£Œì— ì œê³µì´ ë˜ê² ì§€ë§Œ,  
+ë§Žì€ íŒŒì¼ì„ ì‚¬ìš©í•˜ì§€ ì•Šì„ ì˜ˆì •ì´ê¸° ë•Œë¬¸ì—  
+ê°•ì˜ì™€ í•¨ê»˜ ì²˜ìŒë¶€í„° ìž‘ì„±í•´ ë‚˜ê°€ëŠ”ê²ƒì„ ì¶”ì²œë“œë¦½ë‹ˆë‹¤.  
 
 ### (1) Middleware basic
-npmÀ» ÅëÇØ¼­ ´Ù¾çÇÑ ¹Ìµé¿þ¾î¸¦ ¼³Ä¡ÇÏ¿© ÀÌ¿ëÇÒ¼ö ÀÖ½À´Ï´Ù.  
+npmì„ í†µí•´ì„œ ë‹¤ì–‘í•œ ë¯¸ë“¤ì›¨ì–´ë¥¼ ì„¤ì¹˜í•˜ì—¬ ì´ìš©í• ìˆ˜ ìžˆìŠµë‹ˆë‹¤.  
 
-ÇÏÁö¸¸ ±× Àü¿¡, ¹Ìµé¿þ¾î°¡ ¾î¶»°Ô ÀÛµ¿µÇ´Â Áö °¨À» Àâ¾Æº¸µµ·Ï ÇÏ°Ú½À´Ï´Ù.  
+í•˜ì§€ë§Œ ê·¸ ì „ì—, ë¯¸ë“¤ì›¨ì–´ê°€ ì–´ë–»ê²Œ ìž‘ë™ë˜ëŠ” ì§€ ê°ì„ ìž¡ì•„ë³´ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤.  
 
 ``` javascript
 //basic.js
@@ -39,26 +39,26 @@ app.listen(3000,()=>{
 });
 ```
 
-´Ù¸¥ ºÎºÐÀº ÀÌÀü express °­ÀÇ¿¡¼­ ´Ù·ç¾ú±â ¶§¹®¿¡ »ý·«ÇÏ°í,  
-ÀÌ¹ø ¿¹Á¦¿¡¼­ Ã³À½ µîÀåÇÑ app.use¿¡ ´ëÇØ¼­¸¸ ¼³¸íÇÏµµ·Ï ÇÏ°Ú½À´Ï´Ù.  
+ë‹¤ë¥¸ ë¶€ë¶„ì€ ì´ì „ express ê°•ì˜ì—ì„œ ë‹¤ë£¨ì—ˆê¸° ë•Œë¬¸ì— ìƒëžµí•˜ê³ ,  
+ì´ë²ˆ ì˜ˆì œì—ì„œ ì²˜ìŒ ë“±ìž¥í•œ app.useì— ëŒ€í•´ì„œë§Œ ì„¤ëª…í•˜ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤.  
 
-app.useÀÇ »ç¿ë¹ýÀº ´ÙÀ½°ú °°½À´Ï´Ù.  
-app.use(¹Ìµé¿þ¾î)  
+app.useì˜ ì‚¬ìš©ë²•ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.  
+app.use(ë¯¸ë“¤ì›¨ì–´)  
 
-Áö±ÝÀº ¹Ìµé¿þ¾î·Î ÄÜ¼ÖÃ¢¿¡ user-agent(=ºê¶ó¿ìÀú Á¤º¸)¸¦ Ãâ·ÂÇÏ¿´½À´Ï´Ù.  
+ì§€ê¸ˆì€ ë¯¸ë“¤ì›¨ì–´ë¡œ ì½˜ì†”ì°½ì— user-agent(=ë¸Œë¼ìš°ì € ì •ë³´)ë¥¼ ì¶œë ¥í•˜ì˜€ìŠµë‹ˆë‹¤.  
 
-¹Ìµé¿þ¾î¸¦ »ç¿ëÇÏ´Âµ¥ ÁÖÀÇÇÏ½Ç Á¡Àº app.useÀÇ À§Ä¡ÀÔ´Ï´Ù.  
-app.use´Â app.get È¤Àº app.postº¸´Ù ¸ÕÀú À§Ä¡ÇØ ÀÖ¾î¾ß ÇÏ¸ç,  
-app.use »çÀÌ¿¡µµ ¾²ÀÎ ¼ø¼­´ë·Î ½ÇÇàµÇ±â ¶§¹®¿¡ ¼ø¼­°¡ Áß¿äÇÕ´Ï´Ù.  
-¶ÇÇÑ, »ç¿ëÀÚ Á¤ÀÇ ¹Ìµé¿þ¾îÀÎ °æ¿ì callbackÇÔ¼öÀÇ ¸Å°³º¯¼ö°¡ req,res,next ¼¼°³°¡ Á¸ÀçÇÏ¸ç  
-¹Ìµé¿þ¾îÀÇ ¸¶Áö¸·¿¡´Â next();·Î ³¡³»ÁÖ¼Å¾ß ´ÙÀ½ ¹Ìµé¿þ¾î È¤Àº app.get / app.post°¡ ½ÇÇàµÈ´Ù´Â Á¡À» À¯ÀÇÇØ ÁÖ¼¼¿ä.  
+ë¯¸ë“¤ì›¨ì–´ë¥¼ ì‚¬ìš©í•˜ëŠ”ë° ì£¼ì˜í•˜ì‹¤ ì ì€ app.useì˜ ìœ„ì¹˜ìž…ë‹ˆë‹¤.  
+app.useëŠ” app.get í˜¹ì€ app.postë³´ë‹¤ ë¨¼ì € ìœ„ì¹˜í•´ ìžˆì–´ì•¼ í•˜ë©°,  
+app.use ì‚¬ì´ì—ë„ ì“°ì¸ ìˆœì„œëŒ€ë¡œ ì‹¤í–‰ë˜ê¸° ë•Œë¬¸ì— ìˆœì„œê°€ ì¤‘ìš”í•©ë‹ˆë‹¤.  
+ë˜í•œ, ì‚¬ìš©ìž ì •ì˜ ë¯¸ë“¤ì›¨ì–´ì¸ ê²½ìš° callbackí•¨ìˆ˜ì˜ ë§¤ê°œë³€ìˆ˜ê°€ req,res,next ì„¸ê°œê°€ ì¡´ìž¬í•˜ë©°  
+ë¯¸ë“¤ì›¨ì–´ì˜ ë§ˆì§€ë§‰ì—ëŠ” next();ë¡œ ëë‚´ì£¼ì…”ì•¼ ë‹¤ìŒ ë¯¸ë“¤ì›¨ì–´ í˜¹ì€ app.get / app.postê°€ ì‹¤í–‰ëœë‹¤ëŠ” ì ì„ ìœ ì˜í•´ ì£¼ì„¸ìš”.  
 
 ### (2) Router
-¶ó¿ìÅÍ¸¦ ¹è¿ì±â ÀÌÀü¿¡ ¶ó¿ìÆÃÀÌ ¹«¾ùÀÎÁö Â¤¾îº¸µµ·Ï ÇÏ°Ú½À´Ï´Ù.  
-»ç½Ç ¿ì¸®´Â ÀÌ¹Ì ¶ó¿ìÆÃÀ» »ç¿ëÇÏ°í ÀÖ¾ú½À´Ï´Ù.  
-¶ó¿ìÆÃÀº Å¬¶óÀÌ¾ðÆ®(=ºê¶ó¿ìÀú)¿¡¼­ ¿äÃ»ÇÏ´Â ÁÖ¼Ò¿¡ µû¶ó ´Ù¸¥ Ã³¸®¸¦ ÇÏ´Â °ÍÀ» ¸»ÇÕ´Ï´Ù.  
-5°­ Express¿¡¼­ app.get(), app.post() ÇÔ¼ö¸¦ ÀÛ¼ºÇÏ´Â °Íµµ ¶ó¿ìÆÃÀ» ÇÑ °ÍÀÌÁÒ.  
-Router ¹Ìµé¿þ¾î´Â ÀÌ·¯ÇÑ ¶ó¿ìÆÃÀ» ´õ¿í ÆíÇÏ°Ô µµ¿ÍÁÝ´Ï´Ù.  
+ë¼ìš°í„°ë¥¼ ë°°ìš°ê¸° ì´ì „ì— ë¼ìš°íŒ…ì´ ë¬´ì—‡ì¸ì§€ ì§šì–´ë³´ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤.  
+ì‚¬ì‹¤ ìš°ë¦¬ëŠ” ì´ë¯¸ ë¼ìš°íŒ…ì„ ì‚¬ìš©í•˜ê³  ìžˆì—ˆìŠµë‹ˆë‹¤.  
+ë¼ìš°íŒ…ì€ í´ë¼ì´ì–¸íŠ¸(=ë¸Œë¼ìš°ì €)ì—ì„œ ìš”ì²­í•˜ëŠ” ì£¼ì†Œì— ë”°ë¼ ë‹¤ë¥¸ ì²˜ë¦¬ë¥¼ í•˜ëŠ” ê²ƒì„ ë§í•©ë‹ˆë‹¤.  
+5ê°• Expressì—ì„œ app.get(), app.post() í•¨ìˆ˜ë¥¼ ìž‘ì„±í•˜ëŠ” ê²ƒë„ ë¼ìš°íŒ…ì„ í•œ ê²ƒì´ì£ .  
+Router ë¯¸ë“¤ì›¨ì–´ëŠ” ì´ëŸ¬í•œ ë¼ìš°íŒ…ì„ ë”ìš± íŽ¸í•˜ê²Œ ë„ì™€ì¤ë‹ˆë‹¤.  
 ```javascript
 //router.js
 const fs=require('fs');
@@ -96,30 +96,30 @@ app.listen(3000,()=>{
 });
 ```
 
-router.js¿¡¼­´Â const router=express.Router();·Î ¶ó¿ìÅÍ¸¦ ÇÏ³ª »ý¼ºÇÑ ´ÙÀ½,  
-±âÁ¸ example.jsÀÇ app.getÀÌ ¼öÇàÇß´ø µ¿ÀÛÀ» router.getÀ¸·Î º¯°æÇÏ¿© ¼öÇàµÇµµ·Ï Çß½À´Ï´Ù.  
-¸¶Áö¸·¿£ router¸¦ ¸ðµâÀ¸·Î exportÇß½À´Ï´Ù.  
+router.jsì—ì„œëŠ” const router=express.Router();ë¡œ ë¼ìš°í„°ë¥¼ í•˜ë‚˜ ìƒì„±í•œ ë‹¤ìŒ,  
+ê¸°ì¡´ example.jsì˜ app.getì´ ìˆ˜í–‰í–ˆë˜ ë™ìž‘ì„ router.getìœ¼ë¡œ ë³€ê²½í•˜ì—¬ ìˆ˜í–‰ë˜ë„ë¡ í–ˆìŠµë‹ˆë‹¤.  
+ë§ˆì§€ë§‰ì—” routerë¥¼ ëª¨ë“ˆìœ¼ë¡œ exportí–ˆìŠµë‹ˆë‹¤.  
 
-example.js¿¡¼­´Â router.js¿¡¼­ exportÇß´ø ¸ðµâÀ» const router·Î °¡Á®¿Ô½À´Ï´Ù.  
-±×¸®°í ±âÁ¸ app.getÀÌ Á¸ÀçÇß´ø ºÎºÐÀ» app.use('/',router);·Î '/' °æ·Î¿¡ ´ëÇØ¼­´Â router¸ðµâ·Î Ã³¸®ÇÏ¶ó´Â ¹Ìµé¿þ¾î¸¦ µî·ÏÇß½À´Ï´Ù.  
+example.jsì—ì„œëŠ” router.jsì—ì„œ exportí–ˆë˜ ëª¨ë“ˆì„ const routerë¡œ ê°€ì ¸ì™”ìŠµë‹ˆë‹¤.  
+ê·¸ë¦¬ê³  ê¸°ì¡´ app.getì´ ì¡´ìž¬í–ˆë˜ ë¶€ë¶„ì„ app.use('/',router);ë¡œ '/' ê²½ë¡œì— ëŒ€í•´ì„œëŠ” routerëª¨ë“ˆë¡œ ì²˜ë¦¬í•˜ë¼ëŠ” ë¯¸ë“¤ì›¨ì–´ë¥¼ ë“±ë¡í–ˆìŠµë‹ˆë‹¤.  
 
-example.js¸¦ ½ÇÇà½ÃÅ°°í localhost:3000¿¡ Á¢¼ÓÇÏ¸é ÀÌÀü ¿¹Á¦¿Í ¶È°°Àº °á°ú°¡ ³ªÅ¸³ª´Â °ÍÀ» È®ÀÎÇÒ ¼ö ÀÖ½À´Ï´Ù.  
+example.jsë¥¼ ì‹¤í–‰ì‹œí‚¤ê³  localhost:3000ì— ì ‘ì†í•˜ë©´ ì´ì „ ì˜ˆì œì™€ ë˜‘ê°™ì€ ê²°ê³¼ê°€ ë‚˜íƒ€ë‚˜ëŠ” ê²ƒì„ í™•ì¸í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.  
 
-ÀÌÀü±îÁö´Â localhost:3000/foo ÀÌ·±½ÄÀÇ ¶ó¿ìÆÃ¸¸ ±¸¼ºÇß½À´Ï´Ù.  
-¸¸¾à¿¡ localhost:3000/foo/barÀÇ ÁÖ¼Ò¸¦ Ã³¸®ÇÏ·Á¸é ¾î¶»°Ô ÇØ¾ß ÇÒ±î¿ä??
+ì´ì „ê¹Œì§€ëŠ” localhost:3000/foo ì´ëŸ°ì‹ì˜ ë¼ìš°íŒ…ë§Œ êµ¬ì„±í–ˆìŠµë‹ˆë‹¤.  
+ë§Œì•½ì— localhost:3000/foo/barì˜ ì£¼ì†Œë¥¼ ì²˜ë¦¬í•˜ë ¤ë©´ ì–´ë–»ê²Œ í•´ì•¼ í• ê¹Œìš”??
 
-¹°·Ð app.get('/foo/bar',...) È¤Àº router.get('/foo/bar',...)ÀÇ ¹æ½ÄÀ¸·Î Ã³¸®°¡ °¡´ÉÀº ÇÒ°Ì´Ï´Ù.  
-¸¸¾à¿¡ ÀÌ·¸°Ô ¶ó¿ìÆÃÇÑ »óÈ²¿¡¼­ localhost:3000/foo/baz ¶ó´Â ÁÖ¼Ò¸¦ Ãß°¡·Î Ã³¸®ÇÏ·Á¸é  
-app.get('/foo/baz',...) È¤Àº router.get('/foo/baz',...)¸¦ ¶Ç ÀÛ¼ºÇÏ¿© Ã³¸®ÇØ¾ßÇÒ±î¿ä??  
+ë¬¼ë¡  app.get('/foo/bar',...) í˜¹ì€ router.get('/foo/bar',...)ì˜ ë°©ì‹ìœ¼ë¡œ ì²˜ë¦¬ê°€ ê°€ëŠ¥ì€ í• ê²ë‹ˆë‹¤.  
+ë§Œì•½ì— ì´ë ‡ê²Œ ë¼ìš°íŒ…í•œ ìƒí™©ì—ì„œ localhost:3000/foo/baz ë¼ëŠ” ì£¼ì†Œë¥¼ ì¶”ê°€ë¡œ ì²˜ë¦¬í•˜ë ¤ë©´  
+app.get('/foo/baz',...) í˜¹ì€ router.get('/foo/baz',...)ë¥¼ ë˜ ìž‘ì„±í•˜ì—¬ ì²˜ë¦¬í•´ì•¼í• ê¹Œìš”??  
 
-¹°·Ð ¾Æ´Õ´Ï´Ù.  
-µÎ°¡ÁöÀÇ ¹æ¹ýÀÌ ÀÖ½À´Ï´Ù.  
+ë¬¼ë¡  ì•„ë‹™ë‹ˆë‹¤.  
+ë‘ê°€ì§€ì˜ ë°©ë²•ì´ ìžˆìŠµë‹ˆë‹¤.  
 
-Ã¹¹øÂ°´Â ¿ÍÀÏµå Ä«µåÀÇ ¹æ¹ýÀÔ´Ï´Ù.  
-ÇÁ·Î±×·¡¹ÖÀ» Á¢ÇÏ¸é¼­ ÁÖ·Î ¾²ÀÏ ¿ÍÀÏµå Ä«µå´Â ? ÀÌ³ª * µîÀÌ ÀÖ½À´Ï´Ù.  
-?ÀÇ ÀÇ¹Ì´Â ¾Æ¹«°Å³ª ÇÑ ±ÛÀÚ¸¦ ÀÇ¹ÌÇÏ°í, *´Â ¾Æ¹«°Å³ª¸¦ ÀÇ¹ÌÇÕ´Ï´Ù.  
-Áï, ¿ÍÀÏµå Ä«µå´Â ¾Æ¹«°Å³ª¸¦ ¸»ÇÕ´Ï´Ù.  
-ÀÌ·± ¿ÍÀÏµå Ä«µå¸¦ ¶ó¿ìÆÃ¿¡µµ »ç¿ëÇÒ¼ö ÀÖ½À´Ï´Ù.  
+ì²«ë²ˆì§¸ëŠ” ì™€ì¼ë“œ ì¹´ë“œì˜ ë°©ë²•ìž…ë‹ˆë‹¤.  
+í”„ë¡œê·¸ëž˜ë°ì„ ì ‘í•˜ë©´ì„œ ì£¼ë¡œ ì“°ì¼ ì™€ì¼ë“œ ì¹´ë“œëŠ” ? ì´ë‚˜ * ë“±ì´ ìžˆìŠµë‹ˆë‹¤.  
+?ì˜ ì˜ë¯¸ëŠ” ì•„ë¬´ê±°ë‚˜ í•œ ê¸€ìžë¥¼ ì˜ë¯¸í•˜ê³ , *ëŠ” ì•„ë¬´ê±°ë‚˜ë¥¼ ì˜ë¯¸í•©ë‹ˆë‹¤.  
+ì¦‰, ì™€ì¼ë“œ ì¹´ë“œëŠ” ì•„ë¬´ê±°ë‚˜ë¥¼ ë§í•©ë‹ˆë‹¤.  
+ì´ëŸ° ì™€ì¼ë“œ ì¹´ë“œë¥¼ ë¼ìš°íŒ…ì—ë„ ì‚¬ìš©í• ìˆ˜ ìžˆìŠµë‹ˆë‹¤.  
 
 ```javascript
 //wildcard.js
@@ -136,16 +136,16 @@ app.listen(3000,()=>{
 });
 ```
 
-wildcard.js¸¦ ½ÇÇà½ÃÅ°°í  
-localhost:3000/id/(¾Æ¹«¹®ÀÚ³ª¼ýÀÚ)¿¡ Á¢¼ÓÇÏ¸é ÀÔ·ÂÇÑ ¹®ÀÚ³ª ¼ýÀÚ°¡ Ãâ·ÂµÇ´Â °ÍÀ» È®ÀÎÇÒ ¼ö ÀÖ½À´Ï´Ù.  
-app.getÀÇ ÁÖ¼Ò¿¡ ÄÝ·Ð(':')À» ÀÌ¿ëÇØ ¿ÍÀÏµå Ä«µå number¸¦ µî·ÏÇØ µÎ¾ú½À´Ï´Ù.  
-±× ´ÙÀ½ req.params·Î ÁÖ¼ÒÀÇ numberÀÚ¸®¿¡ ÀÔ·ÂµÈ °ªÀ» num¿¡ ÀúÀåÇÑÈÄ res.sendÇØ ÁÖ¾ú½À´Ï´Ù.  
+wildcard.jsë¥¼ ì‹¤í–‰ì‹œí‚¤ê³   
+localhost:3000/id/(ì•„ë¬´ë¬¸ìžë‚˜ìˆ«ìž)ì— ì ‘ì†í•˜ë©´ ìž…ë ¥í•œ ë¬¸ìžë‚˜ ìˆ«ìžê°€ ì¶œë ¥ë˜ëŠ” ê²ƒì„ í™•ì¸í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.  
+app.getì˜ ì£¼ì†Œì— ì½œë¡ (':')ì„ ì´ìš©í•´ ì™€ì¼ë“œ ì¹´ë“œ numberë¥¼ ë“±ë¡í•´ ë‘ì—ˆìŠµë‹ˆë‹¤.  
+ê·¸ ë‹¤ìŒ req.paramsë¡œ ì£¼ì†Œì˜ numberìžë¦¬ì— ìž…ë ¥ëœ ê°’ì„ numì— ì €ìž¥í•œí›„ res.sendí•´ ì£¼ì—ˆìŠµë‹ˆë‹¤.  
 
-ÀÌ·Î½á, localhost:3000/id/(¾Æ¹«¹®ÀÚ³ª¼ýÀÚ)¿¡ ´ëÇÑ ¶ó¿ìÆÃÀº ÇØ°áµÇ¾ú½À´Ï´Ù.  
+ì´ë¡œì¨, localhost:3000/id/(ì•„ë¬´ë¬¸ìžë‚˜ìˆ«ìž)ì— ëŒ€í•œ ë¼ìš°íŒ…ì€ í•´ê²°ë˜ì—ˆìŠµë‹ˆë‹¤.  
 
-µÎ¹øÂ°´Â ¾Æ±î ¹è¿î router ¹Ìµé¿þ¾î¸¦ È°¿ëÇÏ´Â ¹æ¹ýÀÔ´Ï´Ù.  
+ë‘ë²ˆì§¸ëŠ” ì•„ê¹Œ ë°°ìš´ router ë¯¸ë“¤ì›¨ì–´ë¥¼ í™œìš©í•˜ëŠ” ë°©ë²•ìž…ë‹ˆë‹¤.  
 
-¿¹Á¦¸¦ ÁøÇàÇÏ±â ¾Õ¼­ µð·ºÅä¸® ±¸¼ºÀº ´ÙÀ½°ú °°ÀÌ µÇ¾îÀÖ½À´Ï´Ù.  
+ì˜ˆì œë¥¼ ì§„í–‰í•˜ê¸° ì•žì„œ ë””ë ‰í† ë¦¬ êµ¬ì„±ì€ ë‹¤ìŒê³¼ ê°™ì´ ë˜ì–´ìžˆìŠµë‹ˆë‹¤.  
 
 foobar.js  
 foo/  
@@ -194,44 +194,44 @@ exports.Baz=(req,res)=>{
 }
 ```
 
-foobar.js¿¡¼­´Â app.use('/foo',foo) '/foo' °æ·Î·Î µé¾î¿À´Â ¿äÃ»Àº foo¶ó´Â ¸ðµâ·Î Ã³¸®µÇµµ·Ï ÇÏ¿´½À´Ï´Ù.  
-ÇÏÁö¸¸ foo´Â js ÆÄÀÏÀÌ ¾Æ´Ñ µð·ºÅä¸®ÀÔ´Ï´Ù. ÀÌ·± °æ¿ì¿¡´Â index.js°¡ ´ë½ÅÇÏ°Ô µË´Ï´Ù.  
-µû¶ó¼­ require('./foo')´Â /foo/index.js¸¦ importÇÏ°Ô µË´Ï´Ù.  
+foobar.jsì—ì„œëŠ” app.use('/foo',foo) '/foo' ê²½ë¡œë¡œ ë“¤ì–´ì˜¤ëŠ” ìš”ì²­ì€ fooë¼ëŠ” ëª¨ë“ˆë¡œ ì²˜ë¦¬ë˜ë„ë¡ í•˜ì˜€ìŠµë‹ˆë‹¤.  
+í•˜ì§€ë§Œ fooëŠ” js íŒŒì¼ì´ ì•„ë‹Œ ë””ë ‰í† ë¦¬ìž…ë‹ˆë‹¤. ì´ëŸ° ê²½ìš°ì—ëŠ” index.jsê°€ ëŒ€ì‹ í•˜ê²Œ ë©ë‹ˆë‹¤.  
+ë”°ë¼ì„œ require('./foo')ëŠ” /foo/index.jsë¥¼ importí•˜ê²Œ ë©ë‹ˆë‹¤.  
 
-index.js´Â router¸¦ »ç¿ëÇÏ°í, ÀÌ ¶ó¿ìÅÍ¸¦ exportÇÕ´Ï´Ù.  
-¶ÇÇÑ, °°Àº foo µð·ºÅä¸®¾ÈÀÇ bar¿Í baz¸¦ importÇÕ´Ï´Ù.
-/bar·Î get¿äÃ»ÀÌ µé¾î¿À¸é bar.Bar¸¦ ½ÇÇàÇÏ°í,  
-/baz·Î get¿äÃ»ÀÌ µé¾î¿À¸é baz.Baz¸¦ ½ÇÇàÇÑ´Ù´Â router.get ÇÔ¼ö¸¦ ÀÛ¼ºÇØ³õ¾Ò½À´Ï´Ù.  
+index.jsëŠ” routerë¥¼ ì‚¬ìš©í•˜ê³ , ì´ ë¼ìš°í„°ë¥¼ exportí•©ë‹ˆë‹¤.  
+ë˜í•œ, ê°™ì€ foo ë””ë ‰í† ë¦¬ì•ˆì˜ barì™€ bazë¥¼ importí•©ë‹ˆë‹¤.
+/barë¡œ getìš”ì²­ì´ ë“¤ì–´ì˜¤ë©´ bar.Barë¥¼ ì‹¤í–‰í•˜ê³ ,  
+/bazë¡œ getìš”ì²­ì´ ë“¤ì–´ì˜¤ë©´ baz.Bazë¥¼ ì‹¤í–‰í•œë‹¤ëŠ” router.get í•¨ìˆ˜ë¥¼ ìž‘ì„±í•´ë†“ì•˜ìŠµë‹ˆë‹¤.  
 
-±×·¯³ª ¿©±â¼­ À¯ÀÇÇÏ¼Å¾ß ÇÒ°ÍÀº ÀÌ /foo/index.js¿¡ Á¢±ÙÇÏ±â À§ÇØ¼­´Â ¿ì¼± example.js¿¡¼­ '/foo'¿¡ ´ëÇÑ Á¢±ÙÀÌ ÀÌ·ç¾îÁ®¾ß ÇÕ´Ï´Ù.  
-±× ´ÙÀ½¿¡ /foo/index.js¿¡ Á¢±ÙµÇ±â ¶§¹®¿¡ 
-/foo/index.js¿¡¼­ router.getÀÇ '/bar', '/baz'´Â  
-½ÇÁ¦·Î´Â localhost:3000/foo/bar ¿Í localhost:3000/foo/bazÀÇ °æ¿ì¿¡ ÇØ´çÇÕ´Ï´Ù.  
+ê·¸ëŸ¬ë‚˜ ì—¬ê¸°ì„œ ìœ ì˜í•˜ì…”ì•¼ í• ê²ƒì€ ì´ /foo/index.jsì— ì ‘ê·¼í•˜ê¸° ìœ„í•´ì„œëŠ” ìš°ì„  example.jsì—ì„œ '/foo'ì— ëŒ€í•œ ì ‘ê·¼ì´ ì´ë£¨ì–´ì ¸ì•¼ í•©ë‹ˆë‹¤.  
+ê·¸ ë‹¤ìŒì— /foo/index.jsì— ì ‘ê·¼ë˜ê¸° ë•Œë¬¸ì— 
+/foo/index.jsì—ì„œ router.getì˜ '/bar', '/baz'ëŠ”  
+ì‹¤ì œë¡œëŠ” localhost:3000/foo/bar ì™€ localhost:3000/foo/bazì˜ ê²½ìš°ì— í•´ë‹¹í•©ë‹ˆë‹¤.  
 
-bar.js¿Í baz.js´Â bar¿¡¼± bar, baz¿¡¼­´Â baz¸¦ Ãâ·ÂÇÕ´Ï´Ù.  
+bar.jsì™€ baz.jsëŠ” barì—ì„  bar, bazì—ì„œëŠ” bazë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.  
 
-¿ÍÀÏµåÄ«µå¸¦ »ç¿ëÇÏ´Â ¹æ¹ý¿¡ ºñÇØ router ¹Ìµé¿þ¾î¸¦ È°¿ëÇÏ´Â ¹æ¹ýÀÌ ÈÎ¾À ¾î·Á¿î°ÍÀ» ¾Ë¼öÀÖ½À´Ï´Ù.  
-¿ì¸®´Â »õ·Î ¹è¿ì´Â ÀÔÀåÀÌ±â ¶§¹®¿¡ ¿ÍÀÏµåÄ«µå¸¦ »ç¿ëÇÏ´Â ¹æ¹ý¸¸ ÀÌÇØÇÏ¼Åµµ ÃæºÐÇÕ´Ï´Ù.  
-±×·¯³ª router ¹Ìµé¿þ¾î¸¦ »ç¿ëÇÏ¸é ¼Ò½ºÄÚµå°¡ ¿©·¯°³ÀÇ ÆÄÀÏ·Î ºÐ¸®µÇ¾î À¯Áö ¹× º¸¼ö°¡ ¸Å¿ì Æí¸®ÇØÁý´Ï´Ù.  
+ì™€ì¼ë“œì¹´ë“œë¥¼ ì‚¬ìš©í•˜ëŠ” ë°©ë²•ì— ë¹„í•´ router ë¯¸ë“¤ì›¨ì–´ë¥¼ í™œìš©í•˜ëŠ” ë°©ë²•ì´ í›¨ì”¬ ì–´ë ¤ìš´ê²ƒì„ ì•Œìˆ˜ìžˆìŠµë‹ˆë‹¤.  
+ìš°ë¦¬ëŠ” ìƒˆë¡œ ë°°ìš°ëŠ” ìž…ìž¥ì´ê¸° ë•Œë¬¸ì— ì™€ì¼ë“œì¹´ë“œë¥¼ ì‚¬ìš©í•˜ëŠ” ë°©ë²•ë§Œ ì´í•´í•˜ì…”ë„ ì¶©ë¶„í•©ë‹ˆë‹¤.  
+ê·¸ëŸ¬ë‚˜ router ë¯¸ë“¤ì›¨ì–´ë¥¼ ì‚¬ìš©í•˜ë©´ ì†ŒìŠ¤ì½”ë“œê°€ ì—¬ëŸ¬ê°œì˜ íŒŒì¼ë¡œ ë¶„ë¦¬ë˜ì–´ ìœ ì§€ ë° ë³´ìˆ˜ê°€ ë§¤ìš° íŽ¸ë¦¬í•´ì§‘ë‹ˆë‹¤.  
 
 ### (3) express.static
-ÀÌ¹ø¿¡´Â Á¤ÀûÀÎ ÆÄÀÏÀ» Á¦°øÇÏ´Âµ¥ µµ¿òÀ» ÁÖ´Â express.static ¹Ìµé¿þ¾î¿¡ ´ëÇØ ¾Ë¾Æº¸µµ·Ï ÇÏ°Ú½À´Ï´Ù.  
-Á¤ÀûÀÎ ÆÄÀÏÀº ÆÄÀÏÀ» ¼öÁ¤ÇÏÁö ¾Ê´Â ÇÑ ÀÏÁ¤ÇÑ °á°ú¸¦ º¸¿©ÁÝ´Ï´Ù.  
-ÀÌ¹ÌÁö, .html, .css, .jsÆÄÀÏ µîÀÌ ±×¿¡ ÇØ´çÇÏ°í  
-µ¿ÀûÀÎ ÆÄÀÏÀº Á¤ÀûÀÎ ÆÄÀÏ°ú ¹Ý´ë·Î Ç×»ó °°Àº °á°ú¸¦ º¸¿©ÁÖÁö´Â ¾Ê½À´Ï´Ù.  
-´Ù·ê ¿¹Á¤Àº ¾Æ´ÏÁö¸¸ node.jsÀÇ view engineÀÎ ejs°¡ ÀÌ¿¡ ÇØ´çÇÕ´Ï´Ù.  
+ì´ë²ˆì—ëŠ” ì •ì ì¸ íŒŒì¼ì„ ì œê³µí•˜ëŠ”ë° ë„ì›€ì„ ì£¼ëŠ” express.static ë¯¸ë“¤ì›¨ì–´ì— ëŒ€í•´ ì•Œì•„ë³´ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤.  
+ì •ì ì¸ íŒŒì¼ì€ íŒŒì¼ì„ ìˆ˜ì •í•˜ì§€ ì•ŠëŠ” í•œ ì¼ì •í•œ ê²°ê³¼ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤.  
+ì´ë¯¸ì§€, .html, .css, .jsíŒŒì¼ ë“±ì´ ê·¸ì— í•´ë‹¹í•˜ê³   
+ë™ì ì¸ íŒŒì¼ì€ ì •ì ì¸ íŒŒì¼ê³¼ ë°˜ëŒ€ë¡œ í•­ìƒ ê°™ì€ ê²°ê³¼ë¥¼ ë³´ì—¬ì£¼ì§€ëŠ” ì•ŠìŠµë‹ˆë‹¤.  
+ë‹¤ë£° ì˜ˆì •ì€ ì•„ë‹ˆì§€ë§Œ node.jsì˜ view engineì¸ ejsê°€ ì´ì— í•´ë‹¹í•©ë‹ˆë‹¤.  
 (ejs, https://araikuma.tistory.com/454)
 
-express.staticÀÇ »ç¿ë¹ýÀº ´ÙÀ½°ú °°½À´Ï´Ù.  
+express.staticì˜ ì‚¬ìš©ë²•ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.  
 
 ```javascript
 app.use(express.static(__dirname+'static'));
 ```
 
-express.static¿¡ Á¢±Ù Çã¿ëÇÏ°íÀÚ ÇÏ´Â ÆÄÀÏÀÇ °æ·Î¸¦ ÀÔ·ÂÇØ ÁÖ½Ã¸é µË´Ï´Ù.  
+express.staticì— ì ‘ê·¼ í—ˆìš©í•˜ê³ ìž í•˜ëŠ” íŒŒì¼ì˜ ê²½ë¡œë¥¼ ìž…ë ¥í•´ ì£¼ì‹œë©´ ë©ë‹ˆë‹¤.  
 
-¿¹Á¦¸¦ »ìÆìº¸°Ú½À´Ï´Ù.  
-µð·ºÅä¸® ±¸¼ºÀº ´ÙÀ½°ú °°ÀÌ µÇ¾îÀÖ½À´Ï´Ù.  
+ì˜ˆì œë¥¼ ì‚´íŽ´ë³´ê² ìŠµë‹ˆë‹¤.  
+ë””ë ‰í† ë¦¬ êµ¬ì„±ì€ ë‹¤ìŒê³¼ ê°™ì´ ë˜ì–´ìžˆìŠµë‹ˆë‹¤.  
 staticExample.js  
 static/  
 \-html/  
@@ -254,50 +254,50 @@ app.listen(3000,()=>{
 });
 ```
 
-staticExample.js¸¦ ½ÇÇà½ÃÅ² ÈÄ localhost:3000/html/index.html¿¡ Á¢¼ÓÇØ º¾½Ã´Ù.  
-¶ó¿ìÆÃ¼³Á¤À» ÇÏ³ªµµ ÇÏÁö ¾Ê¾ÒÁö¸¸ index.htmlÆäÀÌÁö°¡ ·ÎµåµÇ´Â °ÍÀ» ¾Ë¼öÀÖ½À´Ï´Ù.  
-ÀÌ¹ø¿¡´Â localhost:3000/html/staticPage.html¿¡ Á¢¼ÓÇØ º¾½Ã´Ù.  
-staticPage.htmlÀÌ ·ÎµåµÇ´Â °ÍÀ» ¾Ë¼öÀÖ½À´Ï´Ù.  
-htmlÆÄÀÏÀÌ ·ÎµåµÊ°ú µ¿½Ã¿¡ static Æú´õ ³»ºÎ¿¡ ÀÖ´Â css°ú imageµµ °°ÀÌ ¼º°øÀûÀ¸·Î ·ÎµåµÇ´Â°ÍÀ» ¾Ë ¼ö ÀÖ½À´Ï´Ù.   
+staticExample.jsë¥¼ ì‹¤í–‰ì‹œí‚¨ í›„ localhost:3000/html/index.htmlì— ì ‘ì†í•´ ë´…ì‹œë‹¤.  
+ë¼ìš°íŒ…ì„¤ì •ì„ í•˜ë‚˜ë„ í•˜ì§€ ì•Šì•˜ì§€ë§Œ index.htmlíŽ˜ì´ì§€ê°€ ë¡œë“œë˜ëŠ” ê²ƒì„ ì•Œìˆ˜ìžˆìŠµë‹ˆë‹¤.  
+ì´ë²ˆì—ëŠ” localhost:3000/html/staticPage.htmlì— ì ‘ì†í•´ ë´…ì‹œë‹¤.  
+staticPage.htmlì´ ë¡œë“œë˜ëŠ” ê²ƒì„ ì•Œìˆ˜ìžˆìŠµë‹ˆë‹¤.  
+htmlíŒŒì¼ì´ ë¡œë“œë¨ê³¼ ë™ì‹œì— static í´ë” ë‚´ë¶€ì— ìžˆëŠ” cssê³¼ imageë„ ê°™ì´ ì„±ê³µì ìœ¼ë¡œ ë¡œë“œë˜ëŠ”ê²ƒì„ ì•Œ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.   
 
-Æ¯Á¤ °æ·Î¿¡¼­¸¸ express.staticÀÌ ÀÛµ¿ÇÏ°Ô ÇÒ¼öµµ ÀÖ½À´Ï´Ù.
+íŠ¹ì • ê²½ë¡œì—ì„œë§Œ express.staticì´ ìž‘ë™í•˜ê²Œ í• ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.
 ```javascript
 app.use('/myhtml',express.static(__dirname+'/static'+'/html'));
 ```
 
-À§ ¿¹Á¦ ÄÚµå¸¦ ´ÙÀ½°ú °°ÀÌ ¼öÁ¤ÇÑ´Ù¸é localhost:3000/myhtml/index.htmlÀÌ³ª localhost:3000/myhtml/staticPage.html·Î Á¢±Ù°¡´ÉÇÕ´Ï´Ù.  
+ìœ„ ì˜ˆì œ ì½”ë“œë¥¼ ë‹¤ìŒê³¼ ê°™ì´ ìˆ˜ì •í•œë‹¤ë©´ localhost:3000/myhtml/index.htmlì´ë‚˜ localhost:3000/myhtml/staticPage.htmlë¡œ ì ‘ê·¼ê°€ëŠ¥í•©ë‹ˆë‹¤.  
 
-ÀÌ¶§ express.static¿¡´Â /static/html±îÁö¸¸ ÀÔ·ÂµÇ¾úÀ¸¹Ç·Î css³ª imageÀÇ °æ·Î´Â »õ·Î express.static ¹Ìµé¿þ¾î¸¦ ÀÌ¿ëÇÏ¿© Ãß°¡ÇØ¾ß ÇÕ´Ï´Ù.  
+ì´ë•Œ express.staticì—ëŠ” /static/htmlê¹Œì§€ë§Œ ìž…ë ¥ë˜ì—ˆìœ¼ë¯€ë¡œ cssë‚˜ imageì˜ ê²½ë¡œëŠ” ìƒˆë¡œ express.static ë¯¸ë“¤ì›¨ì–´ë¥¼ ì´ìš©í•˜ì—¬ ì¶”ê°€í•´ì•¼ í•©ë‹ˆë‹¤.  
 
 
 ### (4) body-parser
-ÀÌ¹ø¿¡´Â body-parser ¹Ìµé¿þ¾î¸¦ ÀÌ¿ëÇÏ¿© Å¬¶óÀÌ¾ðÆ®·ÎºÎÅÍ µ¥ÀÌÅÍ¸¦ ¹Þ°í Ã³¸®ÇÏ´Â °úÁ¤À» ¹è¿öº¸µµ·Ï ÇÏ°Ú½À´Ï´Ù.  
+ì´ë²ˆì—ëŠ” body-parser ë¯¸ë“¤ì›¨ì–´ë¥¼ ì´ìš©í•˜ì—¬ í´ë¼ì´ì–¸íŠ¸ë¡œë¶€í„° ë°ì´í„°ë¥¼ ë°›ê³  ì²˜ë¦¬í•˜ëŠ” ê³¼ì •ì„ ë°°ì›Œë³´ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤.  
 
-body-parser ¹Ìµé¿þ¾î´Â ÁÖ·Î POST¸¦ ÅëÇÑ µ¥ÀÌÅÍ¸¦ ¹Þ´Âµ¥ »ç¿ëµË´Ï´Ù.  
-±×·¯¸é GETÀ» ÀÌ¿ëÇÑ µ¥ÀÌÅÍ´Â ¾î¶»°Ô ¹ÞÀ»±î¿ä?
+body-parser ë¯¸ë“¤ì›¨ì–´ëŠ” ì£¼ë¡œ POSTë¥¼ í†µí•œ ë°ì´í„°ë¥¼ ë°›ëŠ”ë° ì‚¬ìš©ë©ë‹ˆë‹¤.  
+ê·¸ëŸ¬ë©´ GETì„ ì´ìš©í•œ ë°ì´í„°ëŠ” ì–´ë–»ê²Œ ë°›ì„ê¹Œìš”?
 
-GET°ú POST´Â µ¥ÀÌÅÍ Àü¼Û¿¡ÀÖ¾î Â÷ÀÌ°¡ ÀÖ½À´Ï´Ù.  
-GET¹æ½ÄÀ¸·Î µ¥ÀÌÅÍ¸¦ Àü¼ÛÇÏ¸é ÁÖ¼Ò¿¡ Äõ¸®½ºÆ®¸µ(QueryString)Çü½ÄÀ¸·Î µ¥ÀÌÅÍ°¡ ´ã¾ÆÁý´Ï´Ù.  
-ÀÌ¿¡ ¹ÝÇØ POST ¹æ½ÄÀ¸·Î µ¥ÀÌÅÍ¸¦ Àü¼ÛÇÏ¸é µ¥ÀÌÅÍ°¡ request body¿¡ ´ã°Ü Áý´Ï´Ù.  
-GET ¹æ½Ä¿¡ ºñÇØ ÇÑÃþ ½Î¿©Á® ÀÖ´Â ¼ÀÀÌÁÒ.  
+GETê³¼ POSTëŠ” ë°ì´í„° ì „ì†¡ì—ìžˆì–´ ì°¨ì´ê°€ ìžˆìŠµë‹ˆë‹¤.  
+GETë°©ì‹ìœ¼ë¡œ ë°ì´í„°ë¥¼ ì „ì†¡í•˜ë©´ ì£¼ì†Œì— ì¿¼ë¦¬ìŠ¤íŠ¸ë§(QueryString)í˜•ì‹ìœ¼ë¡œ ë°ì´í„°ê°€ ë‹´ì•„ì§‘ë‹ˆë‹¤.  
+ì´ì— ë°˜í•´ POST ë°©ì‹ìœ¼ë¡œ ë°ì´í„°ë¥¼ ì „ì†¡í•˜ë©´ ë°ì´í„°ê°€ request bodyì— ë‹´ê²¨ ì§‘ë‹ˆë‹¤.  
+GET ë°©ì‹ì— ë¹„í•´ í•œì¸µ ì‹¸ì—¬ì ¸ ìžˆëŠ” ì…ˆì´ì£ .  
 
-Äõ¸®½ºÆ®¸µÀº ´ÙÀ½°ú °°Àº ±¸Á¶¸¦ Áö´Õ´Ï´Ù.  
+ì¿¼ë¦¬ìŠ¤íŠ¸ë§ì€ ë‹¤ìŒê³¼ ê°™ì€ êµ¬ì¡°ë¥¼ ì§€ë‹™ë‹ˆë‹¤.  
 
-³×ÀÌ¹ö¿¡ °æÈñ´ëÇÐ±³¸¦ °Ë»öÇÑ ÈÄ ÁÖ¼Ò¸¦ º¹»çÇØ ¿À°Ú½À´Ï´Ù.  
+ë„¤ì´ë²„ì— ê²½í¬ëŒ€í•™êµë¥¼ ê²€ìƒ‰í•œ í›„ ì£¼ì†Œë¥¼ ë³µì‚¬í•´ ì˜¤ê² ìŠµë‹ˆë‹¤.  
 
-https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query=°æÈñ´ëÇÐ±³
+https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query=ê²½í¬ëŒ€í•™êµ
 
-search.naver.com/search.naver ÀÌÈÄ ?·Î ½ÃÀÛÇÏ¿© =°ú &ÀÌ ¹Ýº¹µÇ´Â °ÍÀ» È®ÀÎÇÒ¼öÀÖ½À´Ï´Ù.  
+search.naver.com/search.naver ì´í›„ ?ë¡œ ì‹œìž‘í•˜ì—¬ =ê³¼ &ì´ ë°˜ë³µë˜ëŠ” ê²ƒì„ í™•ì¸í• ìˆ˜ìžˆìŠµë‹ˆë‹¤.  
 
-?°¡ ÇÏ´Â °ÍÀº ?ÀÌÈÄ·Î´Â Äõ¸®½ºÆ®¸µÀÌ¶ó°í ¾Ë·ÁÁÖ´Â °ÍÀÔ´Ï´Ù.  
-Äõ¸®½ºÆ®¸µÀº ´ÙÀ½°ú °°Àº ±¸Á¶°¡ ¹Ýº¹µË´Ï´Ù.  
+?ê°€ í•˜ëŠ” ê²ƒì€ ?ì´í›„ë¡œëŠ” ì¿¼ë¦¬ìŠ¤íŠ¸ë§ì´ë¼ê³  ì•Œë ¤ì£¼ëŠ” ê²ƒìž…ë‹ˆë‹¤.  
+ì¿¼ë¦¬ìŠ¤íŠ¸ë§ì€ ë‹¤ìŒê³¼ ê°™ì€ êµ¬ì¡°ê°€ ë°˜ë³µë©ë‹ˆë‹¤.  
 key1=value1&key2=value2&key3=value3&....  
-À§ ÁÖ¼Ò·Î ´Ù½Ã µ¹¾Æ°¡¸é Äõ¸®½ºÆ®¸µÀº  
-smÀº top_hty¶ó´Â °ªÀ» °¡Áö°í, fbmÀº 1, ie´Â utf8, query´Â °Ë»ö¾îÀÎ °æÈñ´ëÇÐ±³¶ó´Â °ªÀ» °¡Áø´Ù´Â °ÍÀ» ¾Ë¼öÀÖ½À´Ï´Ù.  
+ìœ„ ì£¼ì†Œë¡œ ë‹¤ì‹œ ëŒì•„ê°€ë©´ ì¿¼ë¦¬ìŠ¤íŠ¸ë§ì€  
+smì€ top_htyë¼ëŠ” ê°’ì„ ê°€ì§€ê³ , fbmì€ 1, ieëŠ” utf8, queryëŠ” ê²€ìƒ‰ì–´ì¸ ê²½í¬ëŒ€í•™êµë¼ëŠ” ê°’ì„ ê°€ì§„ë‹¤ëŠ” ê²ƒì„ ì•Œìˆ˜ìžˆìŠµë‹ˆë‹¤.  
 
-ÀÌ¸¦ ¼­¹ö´Ü¿¡¼­ Ã³¸®ÇÏ·Á¸é ¾î¶»°Ô ÇÒ±î¿ä??  
+ì´ë¥¼ ì„œë²„ë‹¨ì—ì„œ ì²˜ë¦¬í•˜ë ¤ë©´ ì–´ë–»ê²Œ í• ê¹Œìš”??  
 
-¿¹Á¦°¡ ½ÇÇàµÉ µð·ºÅä¸® ±¸¼ºÀº ´ÙÀ½°ú °°½À´Ï´Ù.  
+ì˜ˆì œê°€ ì‹¤í–‰ë  ë””ë ‰í† ë¦¬ êµ¬ì„±ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.  
 
 qsExample.js  
 static/
@@ -322,19 +322,19 @@ app.listen(3000,()=>{
 });
 ```
 
-app.get('/send') ³»ºÎÀÇ req.query.text¸¦ ÅëÇØ ÀÌ¸§ÀÌ textÀÎ °ªÀÇ value¸¦ °¡Á®¿Ô½À´Ï´Ù.  
-¿©±â¼­ key°ªÀ» °áÁ¤ÇÏ´Â °ÍÀº qsExample.htmlÆÄÀÏÀÇ input ÅÂ±×ÀÇ name ¼Ó¼ºÀÔ´Ï´Ù. ÀÌºÎºÐÀº POST¿¡¼­µµ ¾²ÀÌ´Ï ²À ±â¾ïÇØ ÁÖ¼¼¿ä.  
+app.get('/send') ë‚´ë¶€ì˜ req.query.textë¥¼ í†µí•´ ì´ë¦„ì´ textì¸ ê°’ì˜ valueë¥¼ ê°€ì ¸ì™”ìŠµë‹ˆë‹¤.  
+ì—¬ê¸°ì„œ keyê°’ì„ ê²°ì •í•˜ëŠ” ê²ƒì€ qsExample.htmlíŒŒì¼ì˜ input íƒœê·¸ì˜ name ì†ì„±ìž…ë‹ˆë‹¤. ì´ë¶€ë¶„ì€ POSTì—ì„œë„ ì“°ì´ë‹ˆ ê¼­ ê¸°ì–µí•´ ì£¼ì„¸ìš”.  
 
-qsExample.js¸¦ ½ÇÇà½ÃÅ°°í localhost:3000/html/qsExample.html¿¡ Á¢¼ÓÇÑ ´ÙÀ½ ¾Æ¹« ÅØ½ºÆ®³ª ÀÔ·ÂÇÏ°í È®ÀÎ ¹öÆ°À» ´­·¯ º¾½Ã´Ù.  
+qsExample.jsë¥¼ ì‹¤í–‰ì‹œí‚¤ê³  localhost:3000/html/qsExample.htmlì— ì ‘ì†í•œ ë‹¤ìŒ ì•„ë¬´ í…ìŠ¤íŠ¸ë‚˜ ìž…ë ¥í•˜ê³  í™•ì¸ ë²„íŠ¼ì„ ëˆŒëŸ¬ ë´…ì‹œë‹¤.  
 
-ÀÔ·ÂÇÑ °ªÀÌ /sendµÚ¿¡ Äõ¸®½ºÆ®¸µÀ¸·Î µé¾î°¡°í ÄÜ¼ÖÃ¢°ú ºê¶ó¿ìÀú È­¸é¿¡ ÀÔ·ÂÇÑ °ªÀÌ Ãâ·ÂµÇ´Â °ÍÀ» È®ÀÎÇÒ¼öÀÖ½À´Ï´Ù.  
+ìž…ë ¥í•œ ê°’ì´ /sendë’¤ì— ì¿¼ë¦¬ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë“¤ì–´ê°€ê³  ì½˜ì†”ì°½ê³¼ ë¸Œë¼ìš°ì € í™”ë©´ì— ìž…ë ¥í•œ ê°’ì´ ì¶œë ¥ë˜ëŠ” ê²ƒì„ í™•ì¸í• ìˆ˜ìžˆìŠµë‹ˆë‹¤.  
 
-ÀÌ¹ø¿¡´Â POSTÀÇ °æ¿ì¸¦ ´Ù·ïº¸°Ú½À´Ï´Ù.  
-Â÷ÀÌÁ¡Àº body-parser ¹Ìµé¿þ¾î¸¦ µî·ÏÇØ ÁÖ¾î¾ß ÇÏ°í  
-GET¿¡¼­´Â Äõ¸®½ºÆ®¸µÀ¸·Î µ¥ÀÌÅÍ°¡ ÁÖ¾îÁö±â ¶§¹®¿¡ req.query·Î °¡Á®¿ÔÁö¸¸,  
-POST¿¡¼­´Â body¿¡ ´ã°Ü ¿À±â ¶§¹®¿¡, req.body·Î Á¢±ÙÇØÁÖ½Ã¸é µË´Ï´Ù.  
+ì´ë²ˆì—ëŠ” POSTì˜ ê²½ìš°ë¥¼ ë‹¤ë¤„ë³´ê² ìŠµë‹ˆë‹¤.  
+ì°¨ì´ì ì€ body-parser ë¯¸ë“¤ì›¨ì–´ë¥¼ ë“±ë¡í•´ ì£¼ì–´ì•¼ í•˜ê³   
+GETì—ì„œëŠ” ì¿¼ë¦¬ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë°ì´í„°ê°€ ì£¼ì–´ì§€ê¸° ë•Œë¬¸ì— req.queryë¡œ ê°€ì ¸ì™”ì§€ë§Œ,  
+POSTì—ì„œëŠ” bodyì— ë‹´ê²¨ ì˜¤ê¸° ë•Œë¬¸ì—, req.bodyë¡œ ì ‘ê·¼í•´ì£¼ì‹œë©´ ë©ë‹ˆë‹¤.  
 
-¿ì¼± body-parser¸¦ ¼³Ä¡ÇÏ°Ú½À´Ï´Ù.  
+ìš°ì„  body-parserë¥¼ ì„¤ì¹˜í•˜ê² ìŠµë‹ˆë‹¤.  
 
 ```bash
 npm install body-parser --save
@@ -360,21 +360,21 @@ app.listen(3000,()=>{
 });
 ```
 
-app.use¿¡¼­ urlencoded¶ó´Â ¹æ½ÄÀ¸·Î Àü¼ÛµÈ µ¥ÀÌÅÍ¸¦ ¹Þ°Ú´Ù¶ó´Â bodyParser¸¦ µî·ÏÇÏ¿´°í, (urlencoded, https://weicomes.tistory.com/10) 
-app.post¸¦ ÀÌ¿ëÇÏ¿© ¶ó¿ìÆÃÇÏ¿´½À´Ï´Ù.  
-ÀÌÀü ¿¹Á¦¿Í ´Ù¸£°Ô µ¥ÀÌÅÍ¿¡ req.body·Î Á¢±ÙÇßÀ½À» À¯ÀÇÇØÁÖ¼¼¿ä.  
+app.useì—ì„œ urlencodedë¼ëŠ” ë°©ì‹ìœ¼ë¡œ ì „ì†¡ëœ ë°ì´í„°ë¥¼ ë°›ê² ë‹¤ë¼ëŠ” bodyParserë¥¼ ë“±ë¡í•˜ì˜€ê³ , (urlencoded, https://weicomes.tistory.com/10)  
+app.postë¥¼ ì´ìš©í•˜ì—¬ ë¼ìš°íŒ…í•˜ì˜€ìŠµë‹ˆë‹¤.  
+ì´ì „ ì˜ˆì œì™€ ë‹¤ë¥´ê²Œ ë°ì´í„°ì— req.bodyë¡œ ì ‘ê·¼í–ˆìŒì„ ìœ ì˜í•´ì£¼ì„¸ìš”.  
 
-localhost:3000/html/index.html¿¡ Á¢¼ÓÇÏ°í ÅØ½ºÆ®¸¦ ÀÔ·ÂÇÑ ´ÙÀ½ È®ÀÎÀ» ´©¸£¸é ÀÌÀü ¿¹Á¦¿Í ¸¶Âù°¡Áö·Î ÀÔ·ÂÇÑ ¹®ÀÚ°¡ ºê¶ó¿ìÀú¿Í ÄÜ¼ÖÃ¢¿¡ Ãâ·ÂÀÌ µË´Ï´Ù.  
+localhost:3000/html/index.htmlì— ì ‘ì†í•˜ê³  í…ìŠ¤íŠ¸ë¥¼ ìž…ë ¥í•œ ë‹¤ìŒ í™•ì¸ì„ ëˆ„ë¥´ë©´ ì´ì „ ì˜ˆì œì™€ ë§ˆì°¬ê°€ì§€ë¡œ ìž…ë ¥í•œ ë¬¸ìžê°€ ë¸Œë¼ìš°ì €ì™€ ì½˜ì†”ì°½ì— ì¶œë ¥ì´ ë©ë‹ˆë‹¤.  
 
 ### (5) Assignment
-È¸¿ø°¡ÀÔÀ» ÇÏ´Â signup.html ÆäÀÌÁö¿Í ·Î±×ÀÎÀ» ÇÏ´Â login.html ÆäÀÌÁö°¡ °­ÀÇ ÀÚ·á¿¡ ÀÖ½À´Ï´Ù.  
-fs ¸ðµâÀ» »ç¿ëÇÏ¼Åµµ ¹«¹æÇÏ°í express.static ¹Ìµé¿þ¾î¸¦ »ç¿ëÇÏ¼Åµµ »ó°üÀº ¾ø½À´Ï´Ù.  
-´ÙÀ½ ±â´ÉÀ» ÇÏ´Â app.js¸¦ ¸¸µé¾î ÁÖ¼¼¿ä.  
+íšŒì›ê°€ìž…ì„ í•˜ëŠ” signup.html íŽ˜ì´ì§€ì™€ ë¡œê·¸ì¸ì„ í•˜ëŠ” login.html íŽ˜ì´ì§€ê°€ ê°•ì˜ ìžë£Œì— ìžˆìŠµë‹ˆë‹¤.  
+fs ëª¨ë“ˆì„ ì‚¬ìš©í•˜ì…”ë„ ë¬´ë°©í•˜ê³  express.static ë¯¸ë“¤ì›¨ì–´ë¥¼ ì‚¬ìš©í•˜ì…”ë„ ìƒê´€ì€ ì—†ìŠµë‹ˆë‹¤.  
+ë‹¤ìŒ ê¸°ëŠ¥ì„ í•˜ëŠ” app.jsë¥¼ ë§Œë“¤ì–´ ì£¼ì„¸ìš”.  
 
-1. localhost:3000¿¡ Á¢¼ÓÇÏ¸é ¹Ù·Î È¸¿ø°¡ÀÔ ÆäÀÌÁö·Î redirect µÈ´Ù.  
-2. È¸¿ø °¡ÀÔÀº ¾ÆÀÌµð(userId)¿Í ºñ¹Ð¹øÈ£(password)·Î¸¸ ÇÊ¿ä·Î ÇÑ´Ù.  
-3. È¸¿ø °¡ÀÔ Ã¢¿¡¼­ ¾ÆÀÌµð¿Í ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÏ°í È¸¿ø °¡ÀÔ ¹öÆ°À» ´©¸£¸é '/signup'ÀÇ ÁÖ¼Ò·Î µ¥ÀÌÅÍ°¡ ´ã±ä Ã¤ POST ¿äÃ»ÀÌ °£´Ù.  
-4. ¼­¹ö¿¡´Â users¶ó´Â json array¸¦ °¡Áö°í ÀÖ´Ù. È¸¿ø °¡ÀÔ ½Ã Àü¼ÛµÈ ¾ÆÀÌµð¿Í ºñ¹Ð¹øÈ£Áß ¾ÆÀÌµð°¡ users¿¡ ÀÌ¹Ì Á¸ÀçÇÏ´ÂÁö È®ÀÎÇÑ´Ù.  
-5. Á¸ÀçÇÏ¸é res.send('User already exists');¸¦ ½ÇÇàÇÏ°í Á¸ÀçÇÏÁö ¾ÊÀ¸¸é users¿¡ »õ·Î¿î JSONÀ» Ãß°¡ÇÏ°í ·Î±×ÀÎ ÆäÀÌÁö·Î redirect ½ÃÅ²´Ù.  
-6. ·Î±×ÀÎÃ¢Àº ¸¶Âù°¡Áö·Î ¾ÆÀÌµð¿Í ºñ¹Ð¹øÈ£¸¦ ¹Þ´Â´Ù.  ·Î±×ÀÎ ¹öÆ°À» ´©¸£¸é '/login'ÀÇ ÁÖ¼Ò·Î POST ¿äÃ»ÀÌ °£´Ù.  
-7. ¼­¹ö´Â users ¹è¿­¿¡¼­ ÇØ´ç ¾ÆÀÌµð°¡ ÀÖ´ÂÁö È®ÀÎÇÏ°í ¸¸¾à ¾ø´Ù¸é res.send('ID wrong');À» ½ÇÇàÇÏ°í ¾ÆÀÌµð°¡ ÀÖÁö¸¸ ºñ¹Ð¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾ÊÀ¸¸é res.send('Password wrong');À» ½ÇÇàÇÏ°í ¾ÆÀÌµð¿Í ºñ¹Ð¹øÈ£°¡ ¸ðµÎ ¿Ã¹Ù¸£¸é res.send("Welcome "+userId+"!");¸¦ ½ÇÇàÇÏ¿© È¯¿µ¹®±¸¸¦ ÀÛ¼ºÇÑ´Ù.  
+1. localhost:3000ì— ì ‘ì†í•˜ë©´ ë°”ë¡œ íšŒì›ê°€ìž… íŽ˜ì´ì§€ë¡œ redirect ëœë‹¤.  
+2. íšŒì› ê°€ìž…ì€ ì•„ì´ë””(userId)ì™€ ë¹„ë°€ë²ˆí˜¸(password)ë¡œë§Œ í•„ìš”ë¡œ í•œë‹¤.  
+3. íšŒì› ê°€ìž… ì°½ì—ì„œ ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ê³  íšŒì› ê°€ìž… ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ '/signup'ì˜ ì£¼ì†Œë¡œ ë°ì´í„°ê°€ ë‹´ê¸´ ì±„ POST ìš”ì²­ì´ ê°„ë‹¤.  
+4. ì„œë²„ì—ëŠ” usersë¼ëŠ” json arrayë¥¼ ê°€ì§€ê³  ìžˆë‹¤. íšŒì› ê°€ìž… ì‹œ ì „ì†¡ëœ ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ì¤‘ ì•„ì´ë””ê°€ usersì— ì´ë¯¸ ì¡´ìž¬í•˜ëŠ”ì§€ í™•ì¸í•œë‹¤.  
+5. ì¡´ìž¬í•˜ë©´ res.send('User already exists');ë¥¼ ì‹¤í–‰í•˜ê³  ì¡´ìž¬í•˜ì§€ ì•Šìœ¼ë©´ usersì— ìƒˆë¡œìš´ JSONì„ ì¶”ê°€í•˜ê³  ë¡œê·¸ì¸ íŽ˜ì´ì§€ë¡œ redirect ì‹œí‚¨ë‹¤.  
+6. ë¡œê·¸ì¸ì°½ì€ ë§ˆì°¬ê°€ì§€ë¡œ ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ ë°›ëŠ”ë‹¤.  ë¡œê·¸ì¸ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ '/login'ì˜ ì£¼ì†Œë¡œ POST ìš”ì²­ì´ ê°„ë‹¤.  
+7. ì„œë²„ëŠ” users ë°°ì—´ì—ì„œ í•´ë‹¹ ì•„ì´ë””ê°€ ìžˆëŠ”ì§€ í™•ì¸í•˜ê³  ë§Œì•½ ì—†ë‹¤ë©´ res.send('ID wrong');ì„ ì‹¤í–‰í•˜ê³  ì•„ì´ë””ê°€ ìžˆì§€ë§Œ ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•Šìœ¼ë©´ res.send('Password wrong');ì„ ì‹¤í–‰í•˜ê³  ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ê°€ ëª¨ë‘ ì˜¬ë°”ë¥´ë©´ res.send("Welcome "+userId+"!");ë¥¼ ì‹¤í–‰í•˜ì—¬ í™˜ì˜ë¬¸êµ¬ë¥¼ ìž‘ì„±í•œë‹¤.  
