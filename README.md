@@ -4,5 +4,5 @@
 1. <a href="https://github.com/JJuOn/2019-Node.js-Study/tree/master/3.%20Promise">Promise, async/await</a>
 1. <a href="https://github.com/JJuOn/2019-Node.js-Study/tree/master/4.%20Modules">Modules</a>
 1. <a href="https://github.com/JJuOn/2019-Node.js-Study/tree/master/5.%20Express">Express</a>
-1. Middlewares
+1. <a href="https://github.com/JJuOn/2019-Node.js-Study/tree/master/6.%20Middlewares">Middlewares</a>
 1. Cookies & Session 
