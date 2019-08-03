@@ -300,9 +300,9 @@ sm은 top_hty라는 값을 가지고, fbm은 1, ie는 utf8, query는 검색어�
 예제가 실행될 디렉토리 구성은 다음과 같습니다.  
 
 qsExample.js  
-static/
-\-html
-\--qsExample.html
+static/  
+\-html/  
+\--qsExample.html  
 
 ```javascript
 //qsExample.js
@@ -360,7 +360,8 @@ app.listen(3000,()=>{
 });
 ```
 
-app.use에서 urlencoded라는 방식으로 전송된 데이터를 받겠다라는 bodyParser를 등록하였고, (urlencoded, https://weicomes.tistory.com/10)  
+app.use에서 urlencoded라는 방식으로 전송된 데이터를 받겠다라는 bodyParser를 등록하였고,  
+(urlencoded, https://weicomes.tistory.com/10)  
 app.post를 이용하여 라우팅하였습니다.  
 이전 예제와 다르게 데이터에 req.body로 접근했음을 유의해주세요.  
 
