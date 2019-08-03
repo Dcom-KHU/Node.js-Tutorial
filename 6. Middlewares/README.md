@@ -116,6 +116,10 @@ app.get('/foo/baz',...) 혹은 router.get('/foo/baz',...)를 또 작성하여 처리해야할
 두가지의 방법이 있습니다.  
 
 첫번째는 와일드 카드의 방법입니다.  
+프로그래밍을 접하면서 주로 쓰일 와일드 카드는 ? 이나 * 등이 있습니다.  
+?의 의미는 아무거나 한 글자를 의미하고, *는 아무거나를 의미합니다.  
+즉, 와일드 카드는 아무거나를 말합니다.  
+이런 와일드 카드를 라우팅에도 사용할수 있습니다.  
 
 ```javascript
 //wildcard.js
@@ -211,8 +215,14 @@ bar.js와 baz.js는 bar에선 bar, baz에서는 baz를 출력합니다.
 그러나 router 미들웨어를 사용하면 소스코드가 여러개의 파일로 분리되어 유지 및 보수가 매우 편리해집니다.  
 
 ### (3) express.static
-이번에는 이미지, .css, .js파일 등 정적인 파일을 제공하는데 도움을 주는 express.static 미들웨어에 대해 알아보도록 하겠습니다.  
-사용법은 다음과 같습니다.  
+이번에는 정적인 파일을 제공하는데 도움을 주는 express.static 미들웨어에 대해 알아보도록 하겠습니다.  
+정적인 파일은 파일을 수정하지 않는 한 일정한 결과를 보여줍니다.  
+이미지, .html, .css, .js파일 등이 그에 해당하고  
+동적인 파일은 정적인 파일과 반대로 항상 같은 결과를 보여주지는 않습니다.  
+다룰 예정은 아니지만 node.js의 view engine인 ejs가 이에 해당합니다.  
+(ejs, https://araikuma.tistory.com/454)
+
+express.static의 사용법은 다음과 같습니다.  
 
 ```javascript
 app.use(express.static(__dirname+'static'));
@@ -350,7 +360,7 @@ app.listen(3000,()=>{
 });
 ```
 
-app.use에서 bodyparser.urlencoded라는 urlencoded라는 방식으로 전송된 데이터를 받겠다라는 bodyParser를 등록하였고,  
+app.use에서 urlencoded라는 방식으로 전송된 데이터를 받겠다라는 bodyParser를 등록하였고, (urlencoded, https://weicomes.tistory.com/10) 
 app.post를 이용하여 라우팅하였습니다.  
 이전 예제와 다르게 데이터에 req.body로 접근했음을 유의해주세요.  
 
