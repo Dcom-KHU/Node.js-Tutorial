@@ -1,9 +1,9 @@
 ## 3. Promise, async/await
 ### (1) Promise
-ºñµ¿±â Ã³¸®´Â ÀÚ¿øÀ» È¿À²ÀûÀ¸·Î »ç¿ëÇÏ°í ¼Óµµ¸¦ ³ôÀÌ´Â ¹æ¹ýÀ¸·Î ¸¹ÀÌ »ç¿ëÇÕ´Ï´Ù.  
-ºñµ¿±â·Î ½ÇÇàÇÒ ¶§´Â callback ÇÔ¼ö¸¦ ¸Å¿ì ¸¹ÀÌ »ç¿ëÇÏ´Âµ¥,  
-ÀÌ´Â ¾Õ¼­ 1.Introduction¿¡¼­ ¾ð±ÞÇÑ ¹Ù¿Í °°ÀÌ callback hell¿¡ °¤Çô ÄÚµåÀÇ °¡µ¶¼ºÀÌ ¶³¾îÁö°í ½Ç¼öÇÒ ¿©Áö°¡ ¸¹½À´Ï´Ù.  
-ÀÌ¸¦ ÇØ°áÇÏ±â À§ÇÑ °ÍÀÌ PromiseÀÔ´Ï´Ù.  
+ë¹„ë™ê¸° ì²˜ë¦¬ëŠ” ìžì›ì„ íš¨ìœ¨ì ìœ¼ë¡œ ì‚¬ìš©í•˜ê³  ì†ë„ë¥¼ ë†’ì´ëŠ” ë°©ë²•ìœ¼ë¡œ ë§Žì´ ì‚¬ìš©í•©ë‹ˆë‹¤.  
+ë¹„ë™ê¸°ë¡œ ì‹¤í–‰í•  ë•ŒëŠ” callback í•¨ìˆ˜ë¥¼ ë§¤ìš° ë§Žì´ ì‚¬ìš©í•˜ëŠ”ë°,  
+ì´ëŠ” ì•žì„œ 1.Introductionì—ì„œ ì–¸ê¸‰í•œ ë°”ì™€ ê°™ì´ callback hellì— ê°‡í˜€ ì½”ë“œì˜ ê°€ë…ì„±ì´ ë–¨ì–´ì§€ê³  ì‹¤ìˆ˜í•  ì—¬ì§€ê°€ ë§ŽìŠµë‹ˆë‹¤.  
+ì´ë¥¼ í•´ê²°í•˜ê¸° ìœ„í•œ ê²ƒì´ Promiseìž…ë‹ˆë‹¤.  
 
 ```javascript
 const promiseResult=new Promise((resolve)=>{
@@ -12,7 +12,7 @@ const promiseResult=new Promise((resolve)=>{
     console.log('first: ',result);
     return result+'hello';
 }).then((result)=>{
-    console.log('second',result);
+    console.log('second: ',result);
     return result+'nello';
 });
 
@@ -23,13 +23,13 @@ promiseResult
 // second: 1hello
 // 1hellonello
 ```
-resolve´Â ÀÌÀü ÇÔ¼ö¿¡¼­ return°ú °°½À´Ï´Ù.  
-Ã³À½¿¡ resolve(1)À» ÇÏ¸é, 1ÀÌ .then()À¸·Î ÀÌ¾î ½ÇÇàµÇ´Â ÇÔ¼öÀÇ ÀÎÀÚ·Î µé¾î°©´Ï´Ù.  
-±×·¸±â¿¡ first: 1ÀÌ Ãâ·ÂµË´Ï´Ù.  
+resolveëŠ” ì´ì „ í•¨ìˆ˜ì—ì„œ returnê³¼ ê°™ìŠµë‹ˆë‹¤.  
+ì²˜ìŒì— resolve(1)ì„ í•˜ë©´, 1ì´ .then()ìœ¼ë¡œ ì´ì–´ ì‹¤í–‰ë˜ëŠ” í•¨ìˆ˜ì˜ ì¸ìžë¡œ ë“¤ì–´ê°‘ë‹ˆë‹¤.  
+ê·¸ë ‡ê¸°ì— first: 1ì´ ì¶œë ¥ë©ë‹ˆë‹¤.  
 
-Promise´Â ¶Ç ´Ù¸¥ Promise °´Ã¼¸¦ ¹ÝÈ¯ÇÏ±â ¶§¹®¿¡ ¸¶Áö¸·¿¡ ¿¬»êÇÑ °ªÀ» .then(result=>console.log(result));·Î Ãâ·ÂÇØÁÖ¾ú½À´Ï´Ù.  
+PromiseëŠ” ë˜ ë‹¤ë¥¸ Promise ê°ì²´ë¥¼ ë°˜í™˜í•˜ê¸° ë•Œë¬¸ì— ë§ˆì§€ë§‰ì— ì—°ì‚°í•œ ê°’ì„ .then(result=>console.log(result));ë¡œ ì¶œë ¥í•´ì£¼ì—ˆìŠµë‹ˆë‹¤.  
 
-¿©·¯°³ÀÇ Promise °´Ã¼¸¦ µû·Î ¼±¾ðÇÑ ÈÄ, ÇÑ¹ø¿¡ ÈÄÃ³¸® ÇÒ¼öµµ ÀÖ½À´Ï´Ù.  
+ì—¬ëŸ¬ê°œì˜ Promise ê°ì²´ë¥¼ ë”°ë¡œ ì„ ì–¸í•œ í›„, í•œë²ˆì— í›„ì²˜ë¦¬ í• ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.  
 
 ```javascript
 const promiseFirst=new Promise((resolve,reject)=>{
@@ -46,13 +46,13 @@ Promise.all([promiseFirst, promiseSecond]).then((result)=>{
 });
 ```
 
-promiseFirst´Â resolve(1)À» ³Ö°í 10À» ´õÇß°í, promiseSecond´Â resolve(2)¸¦ ³Ö°í 20À» ´õÇß½À´Ï´Ù.  
-ÀÌ µÎ Promise¸¦ Promise.all()À» ÀÌ¿ëÇØ Ã³¸®Çß½À´Ï´Ù.  
-ÀÌ¶§ return°ªÀº ¹è¿­ÀÌ±â ¶§¹®¿¡ sumÀ» ±¸ÇÏ´Â °úÁ¤¿¡¼­ result\[0\]°ú result\[1\]À» ÀÌ¿ëÇØ Á¢±ÙÇß½À´Ï´Ù.  
+promiseFirstëŠ” resolve(1)ì„ ë„£ê³  10ì„ ë”í–ˆê³ , promiseSecondëŠ” resolve(2)ë¥¼ ë„£ê³  20ì„ ë”í–ˆìŠµë‹ˆë‹¤.  
+ì´ ë‘ Promiseë¥¼ Promise.all()ì„ ì´ìš©í•´ ì²˜ë¦¬í–ˆìŠµë‹ˆë‹¤.  
+ì´ë•Œ returnê°’ì€ ë°°ì—´ì´ê¸° ë•Œë¬¸ì— sumì„ êµ¬í•˜ëŠ” ê³¼ì •ì—ì„œ result\[0\]ê³¼ result\[1\]ì„ ì´ìš©í•´ ì ‘ê·¼í–ˆìŠµë‹ˆë‹¤.  
 
 ### (2) Async/await
-async/awaitÀº callback hellÀ» Å»ÃâÇÏ°íÀÚ »ý±ä Promise¸¶Àúµµ ÀåÈ²ÇÏ°Ô ´À²¸ ES2017(=ES8)¹öÀü¿¡¼­ Åº»ýÇß½À´Ï´Ù.  
-¼Ò½ºÄÚµå¿Í ÇÔ²² ¼³¸í µå¸®°Ú½À´Ï´Ù.  
+async/awaitì€ callback hellì„ íƒˆì¶œí•˜ê³ ìž ìƒê¸´ Promiseë§ˆì €ë„ ìž¥í™©í•˜ê²Œ ëŠê»´ ES2017(=ES8)ë²„ì „ì—ì„œ íƒ„ìƒí–ˆìŠµë‹ˆë‹¤.  
+ì†ŒìŠ¤ì½”ë“œì™€ í•¨ê»˜ ì„¤ëª… ë“œë¦¬ê² ìŠµë‹ˆë‹¤.  
 ```javascript
 const promiseAdd10=(num)=>{
     return new Promise((resolve,reject)=>{
@@ -66,8 +66,8 @@ const promiseSubtract10=(num)=>{
     });
 }
 ```
-À§ ÄÚµå´Â ÇÔ¼öÀÇ ¸Å°³º¯¼ö·Î ÁÖ¾îÁø °ª¿¡ 10À» ´õÇØ¼­ Promise °´Ã¼¸¦ ¸®ÅÏÇÏ´Â ÇÔ¼ö promiseAdd10¿Í, ¸Å°³º¯¼ö·Î ÁÖ¾îÁø °ª¿¡ 10À» »©¼­ Promise °´Ã¼¸¦ ¸®ÅÏÇÏ´Â ÇÔ¼ö promiseSubtract10À» ±¸ÇöÇØ ³õ¾Ò½À´Ï´Ù.  
-µÎ ÇÔ¼ö¸¦ ¼ø¼­´ë·Î ½ÇÇàÇÏ°íÀÚ ÇÏ¸é ´ÙÀ½°ú °°Àº ÄÚµå°¡ ³ª¿É´Ï´Ù.  
+ìœ„ ì½”ë“œëŠ” í•¨ìˆ˜ì˜ ë§¤ê°œë³€ìˆ˜ë¡œ ì£¼ì–´ì§„ ê°’ì— 10ì„ ë”í•´ì„œ Promise ê°ì²´ë¥¼ ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜ promiseAdd10ì™€, ë§¤ê°œë³€ìˆ˜ë¡œ ì£¼ì–´ì§„ ê°’ì— 10ì„ ë¹¼ì„œ Promise ê°ì²´ë¥¼ ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜ promiseSubtract10ì„ êµ¬í˜„í•´ ë†“ì•˜ìŠµë‹ˆë‹¤.  
+ë‘ í•¨ìˆ˜ë¥¼ ìˆœì„œëŒ€ë¡œ ì‹¤í–‰í•˜ê³ ìž í•˜ë©´ ë‹¤ìŒê³¼ ê°™ì€ ì½”ë“œê°€ ë‚˜ì˜µë‹ˆë‹¤.  
 ```javascript
 const promiseAdd10=(num)=>{
     return new Promise((resolve,reject)=>{
@@ -84,12 +84,12 @@ const promiseSubtract10=(num)=>{
 promiseAdd10(90)
     .then(promiseSubtract10)
     .then((result)=>{
-        console.log("°á°ú´Â",result,"ÀÔ´Ï´Ù."); // °á°ú´Â 90 ÀÔ´Ï´Ù.
+        console.log("ê²°ê³¼ëŠ”",result,"ìž…ë‹ˆë‹¤."); // ê²°ê³¼ëŠ” 90 ìž…ë‹ˆë‹¤.
     });
 ```
 
-callback ÇüÅÂ¿¡ ºñÇØ¼­´Â °¡µ¶¼ºÀÌ ¸¹ÀÌ Çâ»óµÇ¾úÁö¸¸ ÄÚµå°¡ ±æ¾îÁø´Ù¸é ¿©ÀüÈ÷ º¸±â ¾î·Á¿öÁö´Â °ÍÀº ¸¶Âù°¡ÁöÀÔ´Ï´Ù.  
-ÀÌ¸¦ ´õ¿í º¸±âÁÁ°Ô ¸¸µé¾î º¸°Ú½À´Ï´Ù.  
+callback í˜•íƒœì— ë¹„í•´ì„œëŠ” ê°€ë…ì„±ì´ ë§Žì´ í–¥ìƒë˜ì—ˆì§€ë§Œ ì½”ë“œê°€ ê¸¸ì–´ì§„ë‹¤ë©´ ì—¬ì „ížˆ ë³´ê¸° ì–´ë ¤ì›Œì§€ëŠ” ê²ƒì€ ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤.  
+ì´ë¥¼ ë”ìš± ë³´ê¸°ì¢‹ê²Œ ë§Œë“¤ì–´ ë³´ê² ìŠµë‹ˆë‹¤.  
 ```javascript
 const promiseAdd10=(num)=>{
     return new Promise((resolve,reject)=>{
@@ -107,57 +107,57 @@ const calculate=async ()=>{
     try{
         let sum=await promiseAdd10(90);
         let result=await promiseSubtract10(sum);
-        console.log("°á°ú´Â",result,"ÀÔ´Ï´Ù."); 
+        console.log("ê²°ê³¼ëŠ”",result,"ìž…ë‹ˆë‹¤."); 
     }
     catch (err){
         console.error(err);
     }
 }
 
-calculate(); // °á°ú´Â 90 ÀÔ´Ï´Ù.
+calculate(); // ê²°ê³¼ëŠ” 90 ìž…ë‹ˆë‹¤.
 ```
-½ÇÁúÀûÀ¸·Î °è»êÀ» ÇÏ´Â calculate ÇÔ¼ö¸¦ Á¤ÀÇÇÏ¿´½À´Ï´Ù.  
-¿©ÅÂ ´Ù·ï º» ÇÔ¼öµé°ú´Â Â÷ÀÌ°¡ ÀÖÀ½À» È®ÀÎÇÒ ¼ö ÀÖ½À´Ï´Ù.  
-¹Ù·Î ÇÔ¼öÀÇ ¸Å°³º¯¼ö ¾Õ¿¡ async¶ó´Â ´Ü¾î°¡ ºÙÀº°Í°ú, try,catch ¹®ÀÌ Ãß°¡ µÇ¾ú°í,  
-ÇÔ¼ö¸¦ ½ÇÇàÇÏ±â ¾Õ¼­ awaitÀÌ¶ó´Â ´Ü¾î°¡ ºÙ¾ú½À´Ï´Ù.  
+ì‹¤ì§ˆì ìœ¼ë¡œ ê³„ì‚°ì„ í•˜ëŠ” calculate í•¨ìˆ˜ë¥¼ ì •ì˜í•˜ì˜€ìŠµë‹ˆë‹¤.  
+ì—¬íƒœ ë‹¤ë¤„ ë³¸ í•¨ìˆ˜ë“¤ê³¼ëŠ” ì°¨ì´ê°€ ìžˆìŒì„ í™•ì¸í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.  
+ë°”ë¡œ í•¨ìˆ˜ì˜ ë§¤ê°œë³€ìˆ˜ ì•žì— asyncë¼ëŠ” ë‹¨ì–´ê°€ ë¶™ì€ê²ƒê³¼, try,catch ë¬¸ì´ ì¶”ê°€ ë˜ì—ˆê³ ,  
+í•¨ìˆ˜ë¥¼ ì‹¤í–‰í•˜ê¸° ì•žì„œ awaitì´ë¼ëŠ” ë‹¨ì–´ê°€ ë¶™ì—ˆìŠµë‹ˆë‹¤.  
 
-awaitÀº PromiseÀÇ resolve¸¦ ÀÏ¹Ý ÇÔ¼öÀÇ returnÃ³·³ Ãë±ÞÇÏ¿©,  callbackÀÌ³ª thenÀ¸·Î ÀÌ¾îÁö´Â º¹ÀâÇÑ ÄÚµå¸¦  
-µ¿±â(Synchronous) ÇüÅÂ·Î ¸¸µé¾î ÁÖ´Â ¿ªÇÒÀ» ÇÕ´Ï´Ù.  
+awaitì€ Promiseì˜ resolveë¥¼ ì¼ë°˜ í•¨ìˆ˜ì˜ returnì²˜ëŸ¼ ì·¨ê¸‰í•˜ì—¬,  callbackì´ë‚˜ thenìœ¼ë¡œ ì´ì–´ì§€ëŠ” ë³µìž¡í•œ ì½”ë“œë¥¼  
+ë™ê¸°(Synchronous) í˜•íƒœë¡œ ë§Œë“¤ì–´ ì£¼ëŠ” ì—­í• ì„ í•©ë‹ˆë‹¤.  
 
-´Ü ¿©±â¼­ ÁÖÀÇÇÒ Á¡Àº awaitÀº ¹«Á¶°Ç async ÇÔ¼ö ¾È¿¡¼­ »ç¿ëµÇ¾î¾ß ÇÕ´Ï´Ù.  
-¶ÇÇÑ, await µÚ¿¡ ½ÇÇàÇÒ ÇÔ¼ö´Â Promise °´Ã¼¸¦ ¹ÝÈ¯ÇÏ¿©¾ß ÇÕ´Ï´Ù.  
-´ÙÀ½Àº async ÇÔ¼ö¸¦ Ç¥ÇöÇÏ´Â ¿©·¯°¡Áö ¿¹½ÃÀÔ´Ï´Ù.  
+ë‹¨ ì—¬ê¸°ì„œ ì£¼ì˜í•  ì ì€ awaitì€ ë¬´ì¡°ê±´ async í•¨ìˆ˜ ì•ˆì—ì„œ ì‚¬ìš©ë˜ì–´ì•¼ í•©ë‹ˆë‹¤.  
+ë˜í•œ, await ë’¤ì— ì‹¤í–‰í•  í•¨ìˆ˜ëŠ” Promise ê°ì²´ë¥¼ ë°˜í™˜í•˜ì—¬ì•¼ í•©ë‹ˆë‹¤.  
+ë‹¤ìŒì€ async í•¨ìˆ˜ë¥¼ í‘œí˜„í•˜ëŠ” ì—¬ëŸ¬ê°€ì§€ ì˜ˆì‹œìž…ë‹ˆë‹¤.  
 
 ```javascript
 const functionExpression=async function(){
-    console.log("ÇÔ¼ö Ç¥Çö½Ä");
+    console.log("í•¨ìˆ˜ í‘œí˜„ì‹");
 }
 const arrowFunction = async () =>{
-    console.log("È­»ìÇ¥ ÇÔ¼ö");
+    console.log("í™”ì‚´í‘œ í•¨ìˆ˜");
 }
 const ITFE=(async ()=>{
-    console.log("Áï½Ã ½ÇÇà ÇÔ¼ö Ç¥Çö½Ä");
+    console.log("ì¦‰ì‹œ ì‹¤í–‰ í•¨ìˆ˜ í‘œí˜„ì‹");
 })();
 ```
-¸¸¾à await µÚÀÇ ÇÔ¼öÀÇ ½ÇÇàÁß¿¡ ¿À·ù°¡ ¹ß»ýÇÏ¸é ¾î¶»°Ô µÉ±î¿ä?  
-¾Æ¹« ÀÏµµ ÀÏ¾î³ªÁö ¾Ê½À´Ï´Ù.  
-µð¹ö±ë °úÁ¤¿¡¼­ ¿¡·¯°¡ ¾î´À °÷¿¡¼­ ¹ß»ýÇß´Â Áö ÆÄ¾ÇÇÏ´Â °ÍÀº ¸Å¿ì Áß¿äÇÕ´Ï´Ù.  
-ÀÌ¸¦ µµ¿ÍÁÖ´Â °ÍÀÌ try catch¹®ÀÔ´Ï´Ù.  
-try ¹® ¾È¿¡¼­ ¹ß»ýÇÑ ¿À·ù´Â catch ¹®ÀÇ ÀÎÀÚ err ·Î µé¾î°¡°Ô µË´Ï´Ù.  
+ë§Œì•½ await ë’¤ì˜ í•¨ìˆ˜ì˜ ì‹¤í–‰ì¤‘ì— ì˜¤ë¥˜ê°€ ë°œìƒí•˜ë©´ ì–´ë–»ê²Œ ë ê¹Œìš”?  
+ì•„ë¬´ ì¼ë„ ì¼ì–´ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤.  
+ë””ë²„ê¹… ê³¼ì •ì—ì„œ ì—ëŸ¬ê°€ ì–´ëŠ ê³³ì—ì„œ ë°œìƒí–ˆëŠ” ì§€ íŒŒì•…í•˜ëŠ” ê²ƒì€ ë§¤ìš° ì¤‘ìš”í•©ë‹ˆë‹¤.  
+ì´ë¥¼ ë„ì™€ì£¼ëŠ” ê²ƒì´ try catchë¬¸ìž…ë‹ˆë‹¤.  
+try ë¬¸ ì•ˆì—ì„œ ë°œìƒí•œ ì˜¤ë¥˜ëŠ” catch ë¬¸ì˜ ì¸ìž err ë¡œ ë“¤ì–´ê°€ê²Œ ë©ë‹ˆë‹¤.  
 
 ### (3) Assignment
 
-´ÙÀ½Àº 3. Promise/address.jsÀÇ ÀÏºÎºÐÀÔ´Ï´Ù.  
+ë‹¤ìŒì€ 3. Promise/address.jsì˜ ì¼ë¶€ë¶„ìž…ë‹ˆë‹¤.  
 
 ```javascript
 let address="";
 
 const country=(addr)=>{
-    addr+="´ëÇÑ¹Î±¹ ";
+    addr+="ëŒ€í•œë¯¼êµ­ ";
     const province=(addr)=>{
-        addr+="°æ±âµµ ";
+        addr+="ê²½ê¸°ë„ ";
         const city=(addr)=>{
-            addr+="¿ëÀÎ½Ã ";
+            addr+="ìš©ì¸ì‹œ ";
             console.log("original : "+addr);
         }
         return city(addr);
@@ -165,16 +165,16 @@ const country=(addr)=>{
     return province(addr);
 }
 
-country(address) // original : ´ëÇÑ¹Î±¹ °æ±âµµ ¿ëÀÎ½Ã
+country(address) // original : ëŒ€í•œë¯¼êµ­ ê²½ê¸°ë„ ìš©ì¸ì‹œ
 ```
 
-À§ ÄÚµå¸¦ Âü°íÇÏ¿© ±âÁ¸ ÄÚµå¸¦ Promise ÇüÅÂ·Î Á¤ÀÇ ÈÄ È£ÃâÇÏ°í, PromiseµéÀ» async/await ¹æ½ÄÀ¸·Î È£ÃâÇØ º¾´Ï´Ù.
+ìœ„ ì½”ë“œë¥¼ ì°¸ê³ í•˜ì—¬ ê¸°ì¡´ ì½”ë“œë¥¼ Promise í˜•íƒœë¡œ ì •ì˜ í›„ í˜¸ì¶œí•˜ê³ , Promiseë“¤ì„ async/await ë°©ì‹ìœ¼ë¡œ í˜¸ì¶œí•´ ë´…ë‹ˆë‹¤.
 
-Ãâ·Â ¿¹½Ã´Â ´ÙÀ½°ú °°½À´Ï´Ù.  
+ì¶œë ¥ ì˜ˆì‹œëŠ” ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.  
 ```bash
-original : ´ëÇÑ¹Î±¹ °æ±âµµ ¿ëÀÎ½Ã
-promise : ´ëÇÑ¹Î±¹ °æ±âµµ ¿ëÀÎ½Ã
-async/await : ´ëÇÑ¹Î±¹ °æ±âµµ ¿ëÀÎ½Ã
+original : ëŒ€í•œë¯¼êµ­ ê²½ê¸°ë„ ìš©ì¸ì‹œ
+promise : ëŒ€í•œë¯¼êµ­ ê²½ê¸°ë„ ìš©ì¸ì‹œ
+async/await : ëŒ€í•œë¯¼êµ­ ê²½ê¸°ë„ ìš©ì¸ì‹œ
 ```
 
-Á¦ÃâÀº ÀÌÀü°ú ¸¶Âù°¡Áö·Î °¢ÀÚÀÇ repository¿¡ ÇØÁÖ½Ã¸é µË´Ï´Ù.
+ì œì¶œì€ ì´ì „ê³¼ ë§ˆì°¬ê°€ì§€ë¡œ ê°ìžì˜ repositoryì— í•´ì£¼ì‹œë©´ ë©ë‹ˆë‹¤.
