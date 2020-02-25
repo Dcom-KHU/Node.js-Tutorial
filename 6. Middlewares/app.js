@@ -1,7 +1,6 @@
-const list=[1,2,3,4,5,6,7,8,9,10];
+const express=require('express');
+const app=express();
 
-const callbackExample=(items, callback)=>{
-    setTimeout(()=>callback(items.reduce((a,b)=>(a+b))),0);
-};
-callbackExample(list,(result)=>console.log(result));
-console.log('first');
+app.listen(3000,()=>{
+    console.log('Server is running on port 3000!');
+});
