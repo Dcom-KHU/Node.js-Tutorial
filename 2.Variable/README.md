@@ -3,7 +3,7 @@
 ### (1) 변수형
 Javascript에서 변수는 `let`, 상수는 `const`를 이용하여 선언합니다.  
 ``` javascript
-// 2-1 declaration.js
+// 2-1_declaration.js
 let variable=1;
 variable=2;
 
@@ -63,7 +63,7 @@ const y=1;
 Javascript에서는 다른 언어(C++, Java)와는 다르게 변수의 선언은 동일하게 합니다.  
 변수에 대입된 값으로 타입을 유추합니다.  
 ```javascript
-//2-2 dataTypes.js
+//2-2_dataTypes.js
 const str="Hello";
 const decimal=10;
 const float=10.1;
@@ -96,7 +96,7 @@ value 자리에는 앞서 언급한 `String`,`Number`,`Array` 뿐만 아니라 `
 
 이번엔 문자열과 관련된 여러 메소드들을 다뤄보도록 하겠습니다.
 ```javascript
-// 2-3 string.js
+// 2-3_string.js
 const str="I Like Node.js";
 console.log(str.length); // 14
 
@@ -117,6 +117,7 @@ String 자료형에 대한 다른 메소드들은 [공식 문서](https://develo
 이번에는 배열과 관련된 여러 메소드들을 다뤄보도록 하겠습니다.  
 
 ```javascript
+// 2-4_array.js
 const arr=['a','b','c','d','e'];
 
 console.log(arr.length); // 5
@@ -139,7 +140,7 @@ Array에 대한 다른 메소드들은 [공식 문서](https://developer.mozilla
 ### (3) Assignment
 다음 students를 아래 형식에 맞게 출력하는 코드를 작성하세요.
 ```javascript
-// 2-5 student.js
+// 2-5_student.js
 const students=[{name:'서주원',age:20,GPA:4.3},
                 {name:'송재혁',age:24,GPA:0.0},
                 {name:'조성완',age:17,GPA:2.38}];

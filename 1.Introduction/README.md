@@ -120,7 +120,7 @@ VS Code를 실행해 줍시다.
 파일명이 hello인 javascript 파일(.js)을 생성해 줍시다.  
 다음과 같은 소스코드를 입력해 봅시다.  
 ```javascript
-//1-1 hello.js
+//1-1_hello.js
 console.log("Hello Node.js!");
 ```
 vscode에서는 `Ctrl+F5`를 누르면 실행이 됩니다.  
