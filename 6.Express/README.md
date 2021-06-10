@@ -1,4 +1,4 @@
-## 5. Express
+## 6. Express
 이전까지는 Node.js의 특징과 관련된 문법에 대해 알아보았습니다.  
 이번 강의는 Node.js의 꽃 Express에 대해 알아보겠습니다.  
 ### (1) HTTP 통신

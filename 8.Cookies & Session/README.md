@@ -1,4 +1,4 @@
-## 7. Cookies & Session
+## 8. Cookies & Session
 드디어 마지막 강의입니다.  
 이번 강의는 쿠키와 세션에 대해 다뤄보도록 하겠습니다.  
 
