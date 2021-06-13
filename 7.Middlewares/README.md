@@ -48,8 +48,8 @@ app.use(미들웨어)
 지금은 미들웨어로 콘솔창에 user-agent(=브라우저 정보)를 출력하였습니다.  
 
 미들웨어를 사용하는데 주의하실 점은 app.use의 위치입니다.  
-app.use는 app.get 혹은 app.post보다 먼저 위치해 있어야 하며,  
-app.use 사이에도 쓰인 순서대로 실행되기 때문에 순서가 중요합니다.  
+app.use는 app.get 혹은 app.post보다 **먼저** 위치해 있어야 하며,  
+app.use 사이에도 **쓰인 순서대로** 실행되기 때문에 순서가 중요합니다.  
 또한, 사용자 정의 미들웨어인 경우 callback함수의 매개변수가 req,res,next 세개가 존재하며  
 미들웨어의 마지막에는 next();로 끝내주셔야 다음 미들웨어 혹은 app.get / app.post가 실행된다는 점을 유의해 주세요.  
 
@@ -57,7 +57,7 @@ app.use 사이에도 쓰인 순서대로 실행되기 때문에 순서가 중요
 라우터를 배우기 이전에 라우팅이 무엇인지 짚어보도록 하겠습니다.  
 사실 우리는 이미 라우팅을 사용하고 있었습니다.  
 라우팅은 클라이언트(=브라우저)에서 요청하는 주소에 따라 다른 처리를 하는 것을 말합니다.  
-5강 Express에서 app.get(), app.post() 함수를 작성하는 것도 라우팅을 한 것이죠.  
+6강 Express에서 app.get(), app.post() 함수를 작성하는 것도 라우팅을 한 것이죠.  
 Router 미들웨어는 이러한 라우팅을 더욱 편하게 도와줍니다.  
 ```javascript
 //router.js
@@ -330,24 +330,20 @@ qsExample.js를 실행시키고 localhost:3000/html/qsExample.html에 접속한 
 입력한 값이 /send뒤에 쿼리스트링으로 들어가고 콘솔창과 브라우저 화면에 입력한 값이 출력되는 것을 확인할수있습니다.  
 
 이번에는 POST의 경우를 다뤄보겠습니다.  
-차이점은 body-parser 미들웨어를 등록해 주어야 하고  
+차이점은 express.json(), express.urlencoded() 미들웨어를 등록해 주어야 하고  
 GET에서는 쿼리스트링으로 데이터가 주어지기 때문에 req.query로 가져왔지만,  
 POST에서는 body에 담겨 오기 때문에, req.body로 접근해주시면 됩니다.  
 
-우선 body-parser를 설치하겠습니다.  
 
-```bash
-npm install body-parser --save
-```
 
 ```javascript 
 //bodyparserExample.js
 const express=require('express');
 const app=express();
-const bodyParser=require('body-parser')
 
 app.use(express.static(__dirname+'/static'));
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
 app.post('/send',(req,res)=>{
     const text=req.body.text;
@@ -360,7 +356,7 @@ app.listen(3000,()=>{
 });
 ```
 
-app.use에서 urlencoded라는 방식으로 전송된 데이터를 받겠다라는 bodyParser를 등록하였고,  
+app.use에서 json과 urlencoded 방식으로 request body를 받기 위해 미들웨어 express.json()과 express.urlencoded()를 등록하였고,  
 (urlencoded, https://weicomes.tistory.com/10)  
 app.post를 이용하여 라우팅하였습니다.  
 이전 예제와 다르게 데이터에 req.body로 접근했음을 유의해주세요.  
