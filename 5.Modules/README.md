@@ -60,8 +60,7 @@ module.exports={
 }
 ```
 
-module.exports에 JSON으로 함수들을 export 해주었습니다.  
-(JSON이란? https://ko.wikipedia.org/wiki/JSON)
+module.exports에 Object로 함수들을 export 해주었습니다.  
 
 그럼 이 모듈은 어떻게 사용할까요?
 
