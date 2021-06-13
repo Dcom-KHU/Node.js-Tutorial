@@ -4,7 +4,7 @@
 ### (1) HTTP 통신
 Express를 시작하기에 앞서 우리가 사용하는 인터넷이 어떻게 이루어지는 지 알아보도록 하겠습니다.  
 
-<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/2.PNG?raw=true">
+<img src="https://github.com/JJuOn/Node.js-Tutorial/blob/master/img/2.PNG?raw=true">
 위 사진은 Node.js 스터디 페이지의 주소 부분입니다.  
 
 주소의 맨 앞에 https가 붙은 것을 확인할 수 있습니다.  
@@ -12,9 +12,9 @@ HTTPS는 HTTP 통신에서 보안이 개선된 방식입니다.
 아무튼 HTTP 통신이랑 큰 틀은 비슷합니다.  
 
 HTTP 통신은 다음과 같은 구조에서 이루어 집니다.  
-<img src="https://raw.githubusercontent.com/JJuOn/2019-Node.js-Study/master/img/3.png">
+<img src="https://raw.githubusercontent.com/JJuOn/Node.js-Tutorial/master/img/3.png">
 1. 클라이언트(웹 브라우저)는 서버에게 URL(자원의 위치)나 URI(자원의 식별자)를 통해 요청(Request)한다.
-1. 서버는 그에 맞는 응답(Response)을 해준다.
+2. 서버는 그에 맞는 응답(Response)을 해준다.
 
 예시를 들어보겠습니다.  
 우리는 네이버에 접속하고자 합니다.  
@@ -30,10 +30,10 @@ HTTP 통신은 다음과 같은 구조에서 이루어 집니다.
 그 다음 Network 탭을 눌러 봅시나.  
 웹 크롤링을 해보신 분이라면 익숙한 화면이 나오게 될 것입니다.  
 만약 Network 탭에 아무런 내용도 뜨지 않는다면 Ctrl+R을 눌러 페이지를 새로 불러와 봅시다.  
-<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/4.PNG?raw=true">  
+<img src="https://github.com/JJuOn/Node.js-Tutorial/blob/master/img/4.PNG?raw=true">  
 위 사진과 같이 많은 로그가 뜨는 것을 확인할 수 있습니다.  
 그 중에서 가장 위의 www.naver.com 이라 적혀있는것을 클릭해 봅시다.  
-<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/5.PNG?raw=true">  
+<img src="https://github.com/JJuOn/Node.js-Tutorial/blob/master/img/5.PNG?raw=true">  
 그렇게 되면 HTTP 통신이 어떻게 이루어져 있는 지 Headers 부터 시작하여 Preview, Response 등등 다양한 정보가 표시됩니다.  
 
 Headers에는 HTTP 통신을 할 때 이 request가 어떤 request인지, 이 response가 어떤 response인지 간략한 설명이 담겨 있습니다.  
@@ -87,13 +87,14 @@ Python의 pip와 비슷한 역할을 합니다.
 현재로선  
 
 1. Introducion  
-1. Functions
-1. Promise
-1. Modules  
+2. Variable
+3. Functions
+4. Promise
+5. Modules  
 ...   
 
 와 같이 보이는 폴더가 되겠네요.  
-webstorm이나 visual studio code와 같이 terminal를 지원해 주는 ide를 사용하고 계시다면 현재 위치를 확인해 주세요.  
+visual studio code 같이 terminal를 지원해 주는 ide를 사용하고 계시다면 현재 위치를 확인해 주세요.  
 
 terminal를 지원해 주지 않는 환경에서 공부하고 계시다면 cmd를 열어 주세요.  
 
@@ -147,7 +148,7 @@ npm install
 ### (3) Express
 Express는 Node.js 기반의 웹 프레임워크입니다.  
 프레임워크는 특정 기능을 수행하기 위한 많은 라이브러리의 묶음이라고 이해하시면 편합니다.  
-웹 프레임워크로는 python의 django나 java의 spring, php의 lalavel등이 있습니다.  
+웹 프레임워크로는 python의 Django, Flask나 java의 Spring, php의 lalavel등이 있습니다.  
 
 바로 시작해 보도록 하겠습니다.
 ```javascript
