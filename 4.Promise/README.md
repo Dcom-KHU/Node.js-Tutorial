@@ -168,7 +168,8 @@ const country=(addr)=>{
 country(address) // original : 대한민국 경기도 용인시
 ```
 
-위 코드를 참고하여 기존 코드를 Promise 형태로 정의 후 호출하고, Promise들을 async/await 방식으로 호출해 봅니다.
+위 코드를 참고하여 기존 코드를 Promise 형태로 정의 후 호출하고,  
+Promise들을 async/await 방식으로 호출해 봅니다.
 
 출력 예시는 다음과 같습니다.  
 ```bash
