@@ -1,9 +1,15 @@
-## 4. Promise, async/await
+## 4. Promise, async/await   
+이번 4강에서는 소스코드의 가독성을 높이고,   
+비동기 처리가 특징인 Node.js에서 자주 사용되는  
+**Promise**를 다뤄보도록 하겠습니다.  
+
+---
+
 ### (1) Promise
 비동기 처리는 자원을 효율적으로 사용하고 속도를 높이는 방법으로 많이 사용합니다.  
 비동기로 실행할 때는 callback 함수를 매우 많이 사용하는데,  
 이는 앞서 1.Introduction에서 언급한 바와 같이 callback hell에 갇혀 코드의 가독성이 떨어지고 실수할 여지가 많습니다.  
-이를 해결하기 위한 것이 Promise입니다.  
+이를 해결하기 위한 것이 **Promise**입니다.  
 
 ```javascript
 const promiseResult=new Promise((resolve)=>{
@@ -23,11 +29,11 @@ promiseResult
 // second: 1hello
 // 1hellonello
 ```
-resolve는 이전 함수에서 return과 같습니다.  
-처음에 resolve(1)을 하면, 1이 .then()으로 이어 실행되는 함수의 인자로 들어갑니다.  
+`resolve()`는 이전 함수에서 return과 같습니다.  
+처음에 `resolve(1)`을 하면, 1이 `.then()`으로 이어 실행되는 함수의 인자로 들어갑니다.  
 그렇기에 first: 1이 출력됩니다.  
 
-Promise는 또 다른 Promise 객체를 반환하기 때문에 마지막에 연산한 값을 .then(result=>console.log(result));로 출력해주었습니다.  
+Promise는 또 다른 Promise 객체를 반환하기 때문에 마지막에 연산한 값을 `.then(result=>console.log(result));`로 출력해주었습니다.  
 
 여러개의 Promise 객체를 따로 선언한 후, 한번에 후처리 할수도 있습니다.  
 
@@ -46,12 +52,14 @@ Promise.all([promiseFirst, promiseSecond]).then((result)=>{
 });
 ```
 
-promiseFirst는 resolve(1)을 넣고 10을 더했고, promiseSecond는 resolve(2)를 넣고 20을 더했습니다.  
-이 두 Promise를 Promise.all()을 이용해 처리했습니다.  
+`promiseFirst`는 `resolve(1)`을 넣고 10을 더했고, `promiseSecond`는 `resolve(2)`를 넣고 20을 더했습니다.  
+이 두 Promise를 `Promise.all()`을 이용해 처리했습니다.  
 이때 return값은 배열이기 때문에 sum을 구하는 과정에서 result\[0\]과 result\[1\]을 이용해 접근했습니다.  
 
+---
+
 ### (2) Async/await
-async/await은 callback hell을 탈출하고자 생긴 Promise마저도 장황하게 느껴 ES2017(=ES8)버전에서 탄생했습니다.  
+**async/await**은 callback hell을 탈출하고자 생긴 Promise마저도 장황하게 느껴 ES2017(=ES8)버전에서 탄생했습니다.  
 소스코드와 함께 설명 드리겠습니다.  
 ```javascript
 const promiseAdd10=(num)=>{
@@ -66,7 +74,7 @@ const promiseSubtract10=(num)=>{
     });
 }
 ```
-위 코드는 함수의 매개변수로 주어진 값에 10을 더해서 Promise 객체를 리턴하는 함수 promiseAdd10와, 매개변수로 주어진 값에 10을 빼서 Promise 객체를 리턴하는 함수 promiseSubtract10을 구현해 놓았습니다.  
+위 코드는 함수의 매개변수로 주어진 값에 10을 더해서 Promise 객체를 리턴하는 함수 `promiseAdd10`와, 매개변수로 주어진 값에 10을 빼서 Promise 객체를 리턴하는 함수 `promiseSubtract10`을 구현해 놓았습니다.  
 두 함수를 순서대로 실행하고자 하면 다음과 같은 코드가 나옵니다.  
 ```javascript
 const promiseAdd10=(num)=>{
@@ -116,16 +124,16 @@ const calculate=async ()=>{
 
 calculate(); // 결과는 90 입니다.
 ```
-실질적으로 계산을 하는 calculate 함수를 정의하였습니다.  
+실질적으로 계산을 하는 `calculate` 함수를 정의하였습니다.  
 여태 다뤄 본 함수들과는 차이가 있음을 확인할 수 있습니다.  
-바로 함수의 매개변수 앞에 async라는 단어가 붙은것과, try,catch 문이 추가 되었고,  
-함수를 실행하기 앞서 await이라는 단어가 붙었습니다.  
+바로 함수의 매개변수 앞에 **async**라는 단어가 붙은것과, **try,catch** 문이 추가 되었고,  
+함수를 실행하기 앞서 **await**이라는 단어가 붙었습니다.  
 
-await은 Promise의 resolve를 일반 함수의 return처럼 취급하여,  callback이나 then으로 이어지는 복잡한 코드를  
+`await`은 Promise의 `resolve`를 일반 함수의 return처럼 취급하여,  callback이나 then으로 이어지는 복잡한 코드를  
 동기(Synchronous) 형태로 만들어 주는 역할을 합니다.  
 
-단 여기서 주의할 점은 await은 무조건 async 함수 안에서 사용되어야 합니다.  
-또한, await 뒤에 실행할 함수는 Promise 객체를 반환하여야 합니다.  
+단 여기서 주의할 점은 await은 무조건 **async 함수 안에서** 사용되어야 합니다.  
+또한, await 뒤에 실행할 함수는 **Promise 객체를 반환**하여야 합니다.  
 다음은 async 함수를 표현하는 여러가지 예시입니다.  
 
 ```javascript
@@ -142,8 +150,10 @@ const ITFE=(async ()=>{
 만약 await 뒤의 함수의 실행중에 오류가 발생하면 어떻게 될까요?  
 아무 일도 일어나지 않습니다.  
 디버깅 과정에서 에러가 어느 곳에서 발생했는 지 파악하는 것은 매우 중요합니다.  
-이를 도와주는 것이 try catch문입니다.  
-try 문 안에서 발생한 오류는 catch 문의 인자 err 로 들어가게 됩니다.  
+이를 도와주는 것이 `try,catch`문입니다.  
+`try` 문 안에서 발생한 오류는 catch 문의 인자 err 로 들어가게 됩니다.  
+
+---
 
 ### (3) Assignment
 
