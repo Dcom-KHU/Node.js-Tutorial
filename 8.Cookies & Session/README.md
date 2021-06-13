@@ -1,5 +1,4 @@
-## 8. Cookies & Session
-드디어 마지막 강의입니다.  
+## 8. Cookies & Session   
 이번 강의는 쿠키와 세션에 대해 다뤄보도록 하겠습니다.  
 
 쿠키와 세션이 무엇인지 알아보기 전에 쿠키와 세션이 필요하게 된 배경에 대해서 알아보도록하겠습니다.  
@@ -30,12 +29,12 @@ HTTP 프로토콜은 이런 기억을 못합니다.
 일단 쿠키를 눈으로 직접 찾아 보겠습니다.  
 이전 강의와 동일하게 네이버에 접속해서 F12를 눌러보도록 하겠습니다.  
 
-5강 Express에서는 network 탭을 들여다 보았지만 이번에는 Application 탭을 눌러봅시다.  
+6강 Express에서는 network 탭을 들여다 보았지만 이번에는 Application 탭을 눌러봅시다.  
 그러고 개발자 도구의 좌측을 보면 Storage의 Cookies를 찾을 수 있습니다.  
 
 그 다음에 https://www.naver.com 을 보면 다음과 같은 창이 출력됩니다.  
 
-<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/6.PNG?raw=true">
+<img src="https://github.com/JJuOn/Node.js-Tutorial/blob/master/img/6.PNG?raw=true">
 
 위 화면에서 알 수 있는 것은 7개의 쿠키가 존재하며, 각각의 값과 도메인, 경로, 만료일 등이 나타나있습니다.  
 이러한 쿠키들은 클라이언트에서 서버로 request를 보낼 때 자동으로 포함이 됩니다.  
@@ -58,14 +57,13 @@ npm install cookie-parser --save
 ```javascript
 //cookieParser.js
 const cookieParser=require('cookie-parser');
-const bodyParser=require('body-parser');
 const fs=require('fs');
 const express=require('express');
 
 const app=express();
 
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:false}));
 
 app.get('/',(req,res)=>{
     fs.readFile('./static/html/index.html',(err,data)=>{
@@ -123,9 +121,8 @@ const express=require('express');
 const fs=require('fs');
 const app=express();
 const session=require('express-session');
-const bodyParser=require('body-parser');
 
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(session({
     secret:'keyboard cat',
     resave:false,
@@ -198,13 +195,8 @@ localhost:3000/get에 접속하면 방금 입력된 값을 확인할 수 있습�
 localhost:3000/delete를 실행하면 세션이 삭제되고, localhost:3000/get에 접속하면 No session이라고 출력이 되는것을 확인할 수 있습니다.  
 
 ### (3) Assignment
-6강 Middlewares의 과제 app.js에 다음 추가기능을 구현해 봅시다.  
+7강 Middlewares의 과제 app.js에 다음 추가기능을 구현해 봅시다.  
 1. signup.html에 학과, 이름 등 4가지 회원정보 추가. login.html은 이전과 동일.
 1. app.js의 users array를 1.에서 추가한 회원정보의 맞게 수정, 회원 가입시 추가된 회원정보도 함께 고려. 
 1. 이전과 동일하게 /login 으로 POST 요청을 보내면 로그인 진행후, req.session.userId에 회원 아이디(userId) 저장 후 '/profile'로 redirect
 1. '/profile'에 GET 요청이 들어오면 res.session.userId를 바탕으로 users array에서 회원을 찾은 후, 비밀번호를 제외한 회원정보를 자유롭게 출력.  
-
-
-이렇게 Node.js의 강의가 종료되었습니다.  
-더운 방학에도 불구하고 여기까지 따라와 주셔서 감사합니다.  
-수고하셨습니다!!
