@@ -1,41 +1,47 @@
-## 7. Cookies & Session
-드디어 마지막 강의입니다.  
-이번 강의는 쿠키와 세션에 대해 다뤄보도록 하겠습니다.  
+## 8. Cookies & Session   
+이번 강의는 **쿠키**와 **세션**에 대해 다뤄보도록 하겠습니다.  
 
 쿠키와 세션이 무엇인지 알아보기 전에 쿠키와 세션이 필요하게 된 배경에 대해서 알아보도록하겠습니다.  
 HTTP 통신은 두가지의 특성을 지닙니다.  
 - 비연결 (Connectionless)
 - 무상태 (Stateless)
 
-Connectionless는 클라이언트(=브라우저)가 서버에게 request를 보내고, 서버는 클라이언트에게 response를 보내면 더 이상의 연결을 하지 않는다는 뜻입니다.  
+**Connectionless**는 클라이언트(=브라우저)가 서버에게 request를 보내고, 서버는 클라이언트에게 response를 보내면 더 이상의 연결을 하지 않는다는 뜻입니다.  
 이를 확인할 수 있는 부분은, 우리가 한 사이트에 접속하여 완전한 페이지를 받았으면 다른 사이트로 이동하지 않는 이상 인터넷과 연결을 해제해도 사이트 화면이 그대로 유지됩니다.  
 만약 서버와 계속 통신하고 있는 상태였다면 인터넷이 끊긴 즉시 이미 불러온 페이지도 볼 수 없게 됩니다.  
 
-Stateless는 상태정보를 저장하지 않아 이전 request와 무관한 request를 독립적으로 처리한다는 의미입니다.  
+**Stateless**는 상태정보를 저장하지 않아 이전 request와 무관한 request를 독립적으로 처리한다는 의미입니다.  
 Connectionless에 의해 request와 response를 주고 받아 통신이 끊어진다면 이전 상태 정보는 저장하지 않습니다.  
 
-하지만 우리가 웹서비스를 이용하면서 사용하는 자동 로그인, 쇼핑몰의 최근 본 상품 목록, 오늘 더이상 팝업을 보지 않음 등은 우리가 자동 로그인에 체크를 한 것과, 어떤 상품을 보았는지, 팝업 안보겠다고 체크한 것까지 누군가(클라이언트 혹은 서버)는 기억을 했기에 구현되는 기능입니다.  
+하지만 우리가 웹서비스를 이용하면서 사용하는
+- 자동 로그인
+- 쇼핑몰의 최근 본 상품 목록
+- 오늘 더이상 팝업을 보지 않음  
+  
+등은 우리가 자동 로그인에 체크를 한 것과, 어떤 상품을 보았는지, 팝업 안보겠다고 체크한 것까지 누군가(클라이언트 혹은 서버)는 기억을 했기에 구현되는 기능입니다.  
 
 HTTP 프로토콜은 이런 기억을 못합니다.  
 그렇다면 누가 기억하는 걸까요?  
-바로 쿠키와 세션입니다.  
+바로 **쿠키**와 **세션**입니다.  
 
 쿠키와 세션은 금붕어의 기억력을 가진 HTTP 프로토콜의 단점을 보완하기 위해 등장했습니다.  
 
 쿠키와 세션의 역할은 비슷하나 차이점은 누가 기억하는지에 따라 달려있습니다.  
 
-쿠키는 클라이언트와 서버가 사용하며 클라이언트가 기억하는 것이고, 세션은 서버가 사용하며 서버가 기억하는 것입니다.  
+쿠키는 클라이언트와 서버가 사용하며 **클라이언트가 기억**하는 것이고, 세션은 서버가 사용하며 **서버가 기억하는 것**입니다.  
+
+---
 
 ### (1) Cookies
 일단 쿠키를 눈으로 직접 찾아 보겠습니다.  
 이전 강의와 동일하게 네이버에 접속해서 F12를 눌러보도록 하겠습니다.  
 
-5강 Express에서는 network 탭을 들여다 보았지만 이번에는 Application 탭을 눌러봅시다.  
+6강 Express에서는 network 탭을 들여다 보았지만 이번에는 Application 탭을 눌러봅시다.  
 그러고 개발자 도구의 좌측을 보면 Storage의 Cookies를 찾을 수 있습니다.  
 
 그 다음에 https://www.naver.com 을 보면 다음과 같은 창이 출력됩니다.  
 
-<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/6.PNG?raw=true">
+<img src="https://github.com/JJuOn/Node.js-Tutorial/blob/master/img/6.PNG?raw=true">
 
 위 화면에서 알 수 있는 것은 7개의 쿠키가 존재하며, 각각의 값과 도메인, 경로, 만료일 등이 나타나있습니다.  
 이러한 쿠키들은 클라이언트에서 서버로 request를 보낼 때 자동으로 포함이 됩니다.  
@@ -58,14 +64,14 @@ npm install cookie-parser --save
 ```javascript
 //cookieParser.js
 const cookieParser=require('cookie-parser');
-const bodyParser=require('body-parser');
 const fs=require('fs');
 const express=require('express');
 
 const app=express();
 
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
 app.get('/',(req,res)=>{
     fs.readFile('./static/html/index.html',(err,data)=>{
@@ -89,8 +95,8 @@ app.listen(3000,()=>{
     console.log('Server is running on port 3000!');
 });
 ```
-app.use(cookieParser());를 통해 cookie-parser 미들웨어를 등록해 줍니다.  
-cookie-parser를 사용하면 req.cookies로 cookie 값을 읽어올 수 있습니다.  
+`app.use(cookieParser());`를 통해 cookie-parser 미들웨어를 등록해 줍니다.  
+cookie-parser를 사용하면 `req.cookies`로 cookie 값을 읽어올 수 있습니다.  
 /get으로 GET 요청을 보내면 현재 브라우저에 저장된 쿠키들을 출력해 줍니다.  
 /set으로 POST 요청을 보내면 fruit이라는 이름의 쿠키의 value를 설정해 줍니다.  
 
@@ -98,6 +104,8 @@ cookieParser.js를 실행하고 localhost:3000에 접속해 봅시다.
 fruit에 넣을 value를 입력하고 submit 버튼을 눌러봅시다.  
 그 다음에 localhost:3000/get에 접속하면 방금 입력한 fruit의 값이 반영된 쿠키들을 조회할 수 있습니다.  
 localhost:3000 으로 되돌아가서 새로운 값을 입력하고 localhost:3000/get에 접속하면 fruit의 값이 바뀐것을 알 수 있습니다.  
+
+---
 
 ### (2) Session
 쿠키는 웹 브라우저에 데이터를 저장하는 방식이었습니다.  
@@ -123,9 +131,9 @@ const express=require('express');
 const fs=require('fs');
 const app=express();
 const session=require('express-session');
-const bodyParser=require('body-parser');
 
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 app.use(session({
     secret:'keyboard cat',
     resave:false,
@@ -198,13 +206,8 @@ localhost:3000/get에 접속하면 방금 입력된 값을 확인할 수 있습�
 localhost:3000/delete를 실행하면 세션이 삭제되고, localhost:3000/get에 접속하면 No session이라고 출력이 되는것을 확인할 수 있습니다.  
 
 ### (3) Assignment
-6강 Middlewares의 과제 app.js에 다음 추가기능을 구현해 봅시다.  
+7강 Middlewares의 과제 app.js에 다음 추가기능을 구현해 봅시다.  
 1. signup.html에 학과, 이름 등 4가지 회원정보 추가. login.html은 이전과 동일.
 1. app.js의 users array를 1.에서 추가한 회원정보의 맞게 수정, 회원 가입시 추가된 회원정보도 함께 고려. 
 1. 이전과 동일하게 /login 으로 POST 요청을 보내면 로그인 진행후, req.session.userId에 회원 아이디(userId) 저장 후 '/profile'로 redirect
 1. '/profile'에 GET 요청이 들어오면 res.session.userId를 바탕으로 users array에서 회원을 찾은 후, 비밀번호를 제외한 회원정보를 자유롭게 출력.  
-
-
-이렇게 Node.js의 강의가 종료되었습니다.  
-더운 방학에도 불구하고 여기까지 따라와 주셔서 감사합니다.  
-수고하셨습니다!!

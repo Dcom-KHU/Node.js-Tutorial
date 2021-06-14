@@ -1,4 +1,9 @@
 ## 1. Introduction 
+이번 장에서는 Node.js에 대해 알아보고,  
+개발환경을 구성한 다음, 간단한 출력을 진행해보도록 하겠습니다.
+
+---
+
 ### (1) Node.js 란?
 Node.js는 구글의 V8 엔진을 인터프리터로 사용하는 런타임입니다.
 
@@ -9,8 +14,7 @@ Node.js **장점**은 세 가지가 있습니다.
 1. Javascript를 기반으로 하기 때문에, Javascript를 다뤄 보았다면 쉽게 익힐 수 있습니다.  
 
 2. Node.js는 수 많은 모듈을 갖고 있습니다. 따라서 개발자가 이용하고자 하는 대부분의 모듈을 쉽게 구할 수 있습니다.
-<img src="https://github.com/JJuOn/2019-Node.js-Study/blob/master/img/1.PNG?raw=true">    
-
+<img src="https://github.com/JJuOn/Node.js-Tutorial/blob/master/img/1.PNG?raw=true">    
 위 이미지는 2019년 7월 기준, www.modulecounts.com 에서 모듈의 개수를 비교한 그래프입니다.  
 Node.js에 해당하는 npm(node.js package manager)가 압도적 차이로 1위 임을 알 수 있습니다.  
 
@@ -19,13 +23,13 @@ Node.js에 해당하는 npm(node.js package manager)가 압도적 차이로 1위 임을 알 수 �
 
 
 다음엔 **단점**을 살펴보겠습니다.  
-1. Node.js는 비동기(Asynchronous)입니다.
+첫번째 단점은 Node.js 비동기(Asynchronous)로 작동한다는 것입니다.  
 장점에서 언급되었던 그 비동기와 같습니다.  
-순차적 프로그래밍 언어(Python, C, C++, Java 등)에 익숙한 우리에게 비동기는 초반에 큰 혼란을 줍니다.
+순차적 프로그래밍 언어(Python, C, C++, Java 등)에 익숙한 우리에게 비동기는 초반에 큰 혼란을 줍니다.  
 ```javascript
-const file="example.txt";
+const filename="example.txt";
 const fs=require('fs');
-fs.readFile(file,(err,data)=>{
+fs.readFile(filename,(err,data)=>{
     if (err){
         throw err;
     }
@@ -34,8 +38,9 @@ fs.readFile(file,(err,data)=>{
 });
 console.log("Exit"); //2
 ```
+
 위의 소스코드를 한번 살펴봅시다.
-오늘은 첫 시간이라 소스코드 전체를 이해하려 하지 않으셔도 좋습니다.
+오늘은 첫 시간이라 소스코드 전체를 이해하려 하지 않으셔도 좋습니다.  
 위 소스코드는 파일을 읽고 출력하는 부분(*1번*)과, "Exit"라고 출력하는 부분(*2번*)으로 나누어져있습니다.  
 
 *1번*과 *2번*의 console.log()는 콘솔창에 출력하는 함수입니다.  
@@ -44,9 +49,7 @@ console.log("Exit"); //2
 정답은 *2번*이 출력된 후, *1번*이 출력됩니다.  
 처음 접하신 분이라면 큰 혼란을 느끼셨을 것입니다.  
 실제로 Node.js를 배우면서 많은 어려움을 느끼는 것이 이 부분입니다.  
-
-<br>
-
+       
 두번째로, 위 소스코드에서 파일 3개를 순차적으로 읽어야 한다면 어떻게 될까요?  
 
 ```javascript
@@ -67,7 +70,7 @@ fs.readFile(file1,(err,data1)=>{
 ```
 
 대충 이런 식으로 됩니다.  
-소스코드가 복잡해진 것을 느낄 수 있습니다.  
+callback을 자주 사용하는 Node.js 특성상 소스코드가 복잡해진 것을 느낄 수 있습니다.  
 지금은 3개이지만, 만약 이런 과정이 더 많아진다면 소스코드는 더욱 복잡해 질 것입니다.  
 복잡한 소스코드는 에러가 자주 발생할 뿐만 아니라, 발생한 에러도 찾기 힘들어집니다.  
 또한 소스코드를 수정하다가 중괄호{}나 소괄호()를 빼먹는다면?  
@@ -76,6 +79,8 @@ fs.readFile(file1,(err,data1)=>{
 
 다행히 Node.js를 사용하는 많은 개발자들도 이러한 불편함을 알고 있기에 이를 해결할 다양한 방법들이 제시되었습니다.
 이런 방법들은 추후에 다룰 예정입니다.  
+
+---
 
 ### (2) 개발환경 구축하기 - Node.js 설치
 이번 챕터에서는 Node.js를 설치하겠습니다.  
@@ -92,22 +97,20 @@ node -v
 ```
 설치한 Node.js의 버전이 출력된다면 성공적으로 설치하신 겁니다.
 
+---
+
 ### (3) 개발환경 구축하기 - IDE 설치
-IDE란 **통합 개발 환경(Integrated Development Environment)**으로 코딩, 디버그, 컴파일, 배포 등 프로그램 개발에 관련된 모든 작업을 하나의 프로그램 안에서 처리하는 환경을 제공하는 소프트웨어입니다. 예를 들어 C++를 개발할 때 주로 사용하는 Visual Studio, Java를 개발할 때 사용하는 Eclipse 등이 있습니다.  
+IDE란 **통합 개발 환경(Integrated Development Environment)** 으로 코딩, 디버그, 컴파일, 배포 등 프로그램 개발에 관련된 모든 작업을 하나의 프로그램 안에서 처리하는 환경을 제공하는 소프트웨어입니다. 예를 들어 C++를 개발할 때 주로 사용하는 Visual Studio, Java를 개발할 때 사용하는 Eclipse 등이 있습니다.  
 Node.js 개발자들이 주로 사용하는 IDE에서는 Visual Studio Code와 Webstorm, Atom 등이 있습니다.  
-저는 이전에 Pycharm을 사용하였기에 Webstorm을 주로 사용하지만, Visual Studio Code도 매우 많은 사람들이 이용하는 IDE입니다.  
-본 강의는 Webstorm과 Visual Studio Code를 기반으로 작성되었습니다.  
+본 강의는 Visual Studio Code를 기반으로 작성되었습니다.  
 
-#### Webstrom 설치하기
-Jetbrains 사의 Webstorm은 자사의 Pycharm(python), intellij IDEA(java)와 다르게 유료입니다.  
-하지만 대학생이라면 학생 라이센스를 통해 교육용으로 사용할 수 있습니다.  
-다음 링크에 나와있는 방법을 통해 라이센스를 받아봅시다.  
-https://tworab.tistory.com/47  
+사실, Visual Studio Code는 IDE라고 부르기에는 적합하지 않습니다.  
+IDE들은 위에 언급된 기능들을 모두 갖춘 소프트웨어를 의미하지만,  
+VSCode 그 자체로는 메모장보다 좀 더 좋은 텍스트 편집기에 불과합니다.  
 
-학생용 라이센스를 얻었다면, 이번에는 Webstorm을 설치해 줍시다.  
-https://copycoding.tistory.com/73 
+그럼에도 불구하고 VSCode를 사용하는 이유는 확장 프로그램을 설치하여 기존 IDE(Webstorm 등)이 할 수 있는 것보다 더 많은 기능을 가질 수 있기 때문입니다.  
 
-위 링크에서 설치 중, License Activation에서 학생 라이센스가 있기 때문에 Evaluate for free가 아닌 Activate를 체크하고 아까 라이센스를 획득한 jetbrains 이메일과 비밀번호를 입력해주시면 됩니다.
+또한 Webstorm보다 매우 가볍습니다.  
 
 #### Visual Studio Code 설치하기
 
@@ -115,18 +118,22 @@ https://league-cat.tistory.com/7
 
 위 링크를 따라 설치하시면 됩니다.
 
-### (3) Hello Node.js 출력하기
-Webstorm 혹은 VS Code를 실행해 줍시다.
+---
+
+### (4) Hello Node.js 출력하기
+VS Code를 실행해 줍시다.
 파일명이 hello인 javascript 파일(.js)을 생성해 줍시다.  
 다음과 같은 소스코드를 입력해 봅시다.  
 ```javascript
+//1-1_hello.js
 console.log("Hello Node.js!");
 ```
-webstorm의 경우 `Alt+Shift+F10`을 누르면 실행이 되고,  
-vscode의 경우 `Ctrl+F5`를 누르면 실행이 됩니다.  
+vscode에서는 `Ctrl+F5`를 누르면 실행이 됩니다.  
 콘솔창에 Hello Node.js! 가 출력이 된 것을 확인 할 수 있습니다.  
 
-### (4) Assignment
+---
+
+### (5) Assignment
 자신의 이름을 콘솔창에 출력하는 프로그램 hello.js를 작성하여 자신의 github repository에 제출해 주세요.  
 출력예시:  
 ```
