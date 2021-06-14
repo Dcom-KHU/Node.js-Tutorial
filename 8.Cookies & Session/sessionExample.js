@@ -4,6 +4,7 @@ const app=express();
 const session=require('express-session');
 
 app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 app.use(session({
     secret:'keyboard cat',
     resave:false,

@@ -1,7 +1,7 @@
 const express=require('express');
 const app=express();
 
-const router=require('./router')
+const router=require('./router');
 
 app.use((req,res,next)=>{
     console.log(req.headers["user-agent"]);
