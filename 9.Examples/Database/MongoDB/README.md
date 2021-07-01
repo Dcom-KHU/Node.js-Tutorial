@@ -2,6 +2,7 @@
 ## Develop Environment
 - Node.js 14.16.1
 - Npm 7.19.0
+- MongoDB 4.4.0
 ## How To Run
 1. Prerequsites  
     MongoDB가 설치되어 있어야 합니다.
