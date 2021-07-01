@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Main</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+    </body>
+    <script src="/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url:'/api/user/info',
+                type:'GET'
+            })
+            .done(function(result){
+                $('body').prepend(`<p>${result.data.userId}님 환영합니다!</p><input type="button" value="로그아웃" onclick="javascript:logout();">`);
+            })
+            .fail(function(result){
+                function redirection(url){
+                    location.href=url;
+                }
+                $('body').prepend(`<p>로그인이 필요합니다!</p><br><input type="button" value="로그인" onclick="javascript:location.href='/login'";>`);
+            });
+        });
+    </script>
+</html>

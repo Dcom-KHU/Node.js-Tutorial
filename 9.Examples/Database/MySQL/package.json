@@ -1,0 +1,22 @@
+{
+  "name": "mysql",
+  "version": "1.0.0",
+  "description": "- Node.js 14.16.1\r - Npm 7.19.0\r - MongoDB 4.4.0\r ## How To Run\r 1. Prerequsites  \r     MongoDB가 설치되어 있어야 합니다.\r 2. Install modules\r    ```bash\r    npm install\r    ```\r 3. Run\r    ```bash\r    node app.js\r    ```\r ## APIs\r - POST /api/user/signup : 사용자 회원가입 API\r - POST /api/user/login : 사용자 로그인 API\r - POST /api/user/logout : 사용자 로그아웃 API\r - GET /api/user/info : 사용자 정보 API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "crypto-js": "^4.0.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-mysql-session": "^2.1.6",
+    "express-session": "^1.17.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "path": "^0.12.7"
+  }
+}
