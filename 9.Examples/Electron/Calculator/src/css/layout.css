@@ -1,0 +1,54 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 30%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: right;
+  overflow-x: auto;
+}
+
+#cur {
+  font-size: 2em;
+}
+
+.buttons {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  flex: 1 0 0;
+  display: flex;
+}
+
+button {
+  flex: 1 0 0;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 0;
+}
+
+button.number {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #ccc;
+}
