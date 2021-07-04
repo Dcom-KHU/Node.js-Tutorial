@@ -1,0 +1,40 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.1.5",
+    "electron-builder": "^22.11.7"
+  },
+  "type": "commonjs",
+  "build":{
+    "asar":true,
+    "appId":"calculator.club.dcom",
+    "productName":"Calculator",
+    "win":{
+      "target":[
+        {
+          "target":"nsis",
+          "arch":[
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon":"./src/img/icon.ico"
+    },
+    "nsis":{
+      "oneClick":true,
+      "perMachine":false,
+      "installerIcon":"./src/img/icon.ico",
+      "createDesktopShortcut":true
+    }
+  }
+}
